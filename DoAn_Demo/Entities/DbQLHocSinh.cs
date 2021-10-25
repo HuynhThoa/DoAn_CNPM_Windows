@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace DoAn_Demo.Entities
 {
-    public partial class Model1 : DbContext
+    public partial class DbQLHocSinh : DbContext
     {
-        public Model1()
-            : base("name=Model1")
+        public DbQLHocSinh()
+            : base("name=DbQLHocSinh")
         {
         }
 

@@ -126,3 +126,7 @@ C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\obj\Debug\DoAn_De
 C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\obj\Debug\DoAn_Demo.csproj.CopyComplete
 C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\obj\Debug\DoAn_Demo.exe
 C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\obj\Debug\DoAn_Demo.pdb
+C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\bin\Debug\EntityFramework.dll
+C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\bin\Debug\EntityFramework.xml
+C:\Users\nguye\Desktop\DoAnCuoiMon\DoAn_CNPM_Windows\DoAn_Demo\bin\Debug\EntityFramework.SqlServer.xml
