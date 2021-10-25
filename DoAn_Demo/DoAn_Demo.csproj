@@ -76,7 +76,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\IBangXepLoaiRepository.cs" />
+    <Compile Include="Data\ICTBangDiemRepository.cs" />
+    <Compile Include="Data\IDanhSachLopRepository.cs" />
+    <Compile Include="Data\IGiaoVienRepository.cs" />
+    <Compile Include="Data\IHocSinhRepository.cs" />
+    <Compile Include="Data\ILoaiLopRepository.cs" />
+    <Compile Include="Data\ILopHocRepository.cs" />
+    <Compile Include="Data\IMonHocRepository.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Entities\BangXepLoai.cs" />
+    <Compile Include="Entities\CTBangDiem.cs" />
+    <Compile Include="Entities\DanhSachLop.cs" />
+    <Compile Include="Entities\GiaoVien.cs" />
+    <Compile Include="Entities\HocSinh.cs" />
+    <Compile Include="Entities\LoaiLop.cs" />
+    <Compile Include="Entities\LopHoc.cs" />
     <Compile Include="Entities\DbQLHocSinh.cs" />
+    <Compile Include="Entities\MonHoc.cs" />
+    <Compile Include="Data\RepositoryBase.cs" />
+    <Compile Include="Repositories\BangXepLoaiRepository.cs" />
+    <Compile Include="Repositories\DanhSachLopRepository.cs" />
+    <Compile Include="Repositories\GiaoVienRepository.cs" />
+    <Compile Include="Repositories\HocSinhRepository.cs" />
+    <Compile Include="Repositories\LoaiLopRepository.cs" />
+    <Compile Include="Repositories\LopHocRepository.cs" />
+    <Compile Include="Repositories\MonHocRepository.cs" />
     <Compile Include="UI\UI_Default\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,5 +198,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
