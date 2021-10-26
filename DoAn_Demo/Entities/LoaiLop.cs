@@ -28,16 +28,5 @@ namespace DoAn_Demo.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonHoc> MonHocs { get; set; }
-
-        public void EditTenLoaiLop(string value)
-        {
-            this.TenLoaiLop = value;
-        }
-
-        public string GetInfor()
-        {
-            return "IDLoaiLop: " + IDLoaiLop +
-                    "TenLoaiLop: " + TenLoaiLop;
-        }
     }
 }

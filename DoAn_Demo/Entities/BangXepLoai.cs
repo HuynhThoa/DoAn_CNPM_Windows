@@ -32,28 +32,5 @@ namespace DoAn_Demo.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhSachLop> DanhSachLops { get; set; }
-
-        public void EditXepLoai(string value)
-        {
-            this.XepLoai = value;
-        }
-
-        public void EditHanhKiem(string value)
-        {
-            this.HanhKiem = value;
-        }
-
-        public void EditNienKhoa(int value)
-        {
-            this.NienKhoa = value;
-        }
-
-        public string GetInfor()
-        {
-            return "IDBXL: " + IDBXL +
-                    "XepLoai: " + XepLoai +
-                    "HanhKiem: " + HanhKiem +
-                       "NienKhoa: " + NienKhoa;
-        }
     }
 }

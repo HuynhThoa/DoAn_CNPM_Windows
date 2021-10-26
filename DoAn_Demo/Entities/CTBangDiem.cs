@@ -26,29 +26,5 @@ namespace DoAn_Demo.Entities
         public virtual BangXepLoai BangXepLoai { get; set; }
 
         public virtual MonHoc MonHoc { get; set; }
-
-        public void EditDiemKyMot(int value)
-        {
-            this.DiemKyMot = value;
-        }
-
-        public void EditDiemKyHai(int value)
-        {
-            this.DiemKyHai = value;
-        }
-
-        public void EditTenMH(int value)
-        {
-            this.IDMH = value;
-        }
-
-        public string GetInfor()
-        {
-            return "IDMH: " + IDMH +
-                    "TenMH: " + MonHoc.TenMH +
-                    "IDBXL: " + IDBXL +
-                    "DiemKyMot: " + DiemKyMot +
-                    "DiemKyHai: " + DiemKyHai;
-        }
     }
 }
