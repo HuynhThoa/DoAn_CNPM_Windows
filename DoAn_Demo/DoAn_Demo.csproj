@@ -85,6 +85,8 @@
     <Compile Include="Data\ILopHocRepository.cs" />
     <Compile Include="Data\IMonHocRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Entities\BangXepLoai.cs" />
     <Compile Include="Entities\CTBangDiem.cs" />
     <Compile Include="Entities\DanhSachLop.cs" />
@@ -96,12 +98,14 @@
     <Compile Include="Entities\MonHoc.cs" />
     <Compile Include="Data\RepositoryBase.cs" />
     <Compile Include="Repositories\BangXepLoaiRepository.cs" />
+    <Compile Include="Repositories\CTBangDiemRepository.cs" />
     <Compile Include="Repositories\DanhSachLopRepository.cs" />
     <Compile Include="Repositories\GiaoVienRepository.cs" />
     <Compile Include="Repositories\HocSinhRepository.cs" />
     <Compile Include="Repositories\LoaiLopRepository.cs" />
     <Compile Include="Repositories\LopHocRepository.cs" />
     <Compile Include="Repositories\MonHocRepository.cs" />
+    <Compile Include="Services\QLHSService.cs" />
     <Compile Include="UI\UI_Default\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
