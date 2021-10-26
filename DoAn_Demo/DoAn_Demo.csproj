@@ -106,6 +106,12 @@
     <Compile Include="UI\UI_Default\UserControlThongKe.Designer.cs">
       <DependentUpon>UserControlThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UI_Default\UserControlXemGiaoVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UI_Default\UserControlXemGiaoVien.Designer.cs">
+      <DependentUpon>UserControlXemGiaoVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\UI_Default\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UI_Default\UserControlThongKe.resx">
       <DependentUpon>UserControlThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UI_Default\UserControlXemGiaoVien.resx">
+      <DependentUpon>UserControlXemGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

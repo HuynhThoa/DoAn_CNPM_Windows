@@ -33,10 +33,15 @@ namespace DoAn_Demo.UI.UI_Default
             this.radioButtonCuoiHK1_45 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxDiemLichSu = new System.Windows.Forms.TextBox();
+            this.textBoxDiemDiaLy = new System.Windows.Forms.TextBox();
             this.textBoxDiemTiengAnh_45 = new System.Windows.Forms.TextBox();
             this.textBoxDiemTiengViet_45 = new System.Windows.Forms.TextBox();
             this.textBoxDiemToan_45 = new System.Windows.Forms.TextBox();
-            this.textBoxNameCapNhatDiem_45 = new System.Windows.Forms.TextBox();
+            this.textBoxIDCapNhatDiem_45 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelDiemLichSu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +49,10 @@ namespace DoAn_Demo.UI.UI_Default
             this.label19 = new System.Windows.Forms.Label();
             this.buttonCapNhatDiem = new System.Windows.Forms.Button();
             this.dataGridViewCapNhatDiem_45 = new System.Windows.Forms.DataGridView();
-            this.labelDiemLichSu = new System.Windows.Forms.Label();
-            this.textBoxDiemDiaLy = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxDiemLichSu = new System.Windows.Forms.TextBox();
             this.buttonCapNhatDiem_45 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButtonCuoiHK2_45
@@ -96,7 +96,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.groupBox2.Controls.Add(this.textBoxDiemTiengAnh_45);
             this.groupBox2.Controls.Add(this.textBoxDiemTiengViet_45);
             this.groupBox2.Controls.Add(this.textBoxDiemToan_45);
-            this.groupBox2.Controls.Add(this.textBoxNameCapNhatDiem_45);
+            this.groupBox2.Controls.Add(this.textBoxIDCapNhatDiem_45);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.labelDiemLichSu);
             this.groupBox2.Controls.Add(this.label3);
@@ -106,12 +106,43 @@ namespace DoAn_Demo.UI.UI_Default
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 75);
+            this.groupBox2.Location = new System.Drawing.Point(19, 87);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 456);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Học Sinh";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(441, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(994, 456);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // textBoxDiemLichSu
+            // 
+            this.textBoxDiemLichSu.Location = new System.Drawing.Point(231, 356);
+            this.textBoxDiemLichSu.Name = "textBoxDiemLichSu";
+            this.textBoxDiemLichSu.Size = new System.Drawing.Size(79, 26);
+            this.textBoxDiemLichSu.TabIndex = 3;
+            this.textBoxDiemLichSu.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // textBoxDiemDiaLy
+            // 
+            this.textBoxDiemDiaLy.Location = new System.Drawing.Point(231, 408);
+            this.textBoxDiemDiaLy.Name = "textBoxDiemDiaLy";
+            this.textBoxDiemDiaLy.Size = new System.Drawing.Size(79, 26);
+            this.textBoxDiemDiaLy.TabIndex = 3;
+            this.textBoxDiemDiaLy.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBoxDiemTiengAnh_45
             // 
@@ -134,12 +165,31 @@ namespace DoAn_Demo.UI.UI_Default
             this.textBoxDiemToan_45.Size = new System.Drawing.Size(79, 26);
             this.textBoxDiemToan_45.TabIndex = 3;
             // 
-            // textBoxNameCapNhatDiem_45
+            // textBoxIDCapNhatDiem_45
             // 
-            this.textBoxNameCapNhatDiem_45.Location = new System.Drawing.Point(146, 113);
-            this.textBoxNameCapNhatDiem_45.Name = "textBoxNameCapNhatDiem_45";
-            this.textBoxNameCapNhatDiem_45.Size = new System.Drawing.Size(269, 26);
-            this.textBoxNameCapNhatDiem_45.TabIndex = 3;
+            this.textBoxIDCapNhatDiem_45.Location = new System.Drawing.Point(146, 113);
+            this.textBoxIDCapNhatDiem_45.Name = "textBoxIDCapNhatDiem_45";
+            this.textBoxIDCapNhatDiem_45.Size = new System.Drawing.Size(269, 26);
+            this.textBoxIDCapNhatDiem_45.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(99, 362);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Lịch Sử";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // labelDiemLichSu
+            // 
+            this.labelDiemLichSu.AutoSize = true;
+            this.labelDiemLichSu.Location = new System.Drawing.Point(99, 411);
+            this.labelDiemLichSu.Name = "labelDiemLichSu";
+            this.labelDiemLichSu.Size = new System.Drawing.Size(63, 20);
+            this.labelDiemLichSu.TabIndex = 0;
+            this.labelDiemLichSu.Text = "Địa Lý";
             // 
             // label3
             // 
@@ -182,9 +232,9 @@ namespace DoAn_Demo.UI.UI_Default
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(6, 116);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 20);
+            this.label19.Size = new System.Drawing.Size(111, 20);
             this.label19.TabIndex = 0;
-            this.label19.Text = "Họ Và Tên";
+            this.label19.Text = "ID Học Sinh";
             // 
             // buttonCapNhatDiem
             // 
@@ -201,7 +251,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewCapNhatDiem_45.AllowUserToDeleteRows = false;
             this.dataGridViewCapNhatDiem_45.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCapNhatDiem_45.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCapNhatDiem_45.Location = new System.Drawing.Point(460, 75);
+            this.dataGridViewCapNhatDiem_45.Location = new System.Drawing.Point(460, 98);
             this.dataGridViewCapNhatDiem_45.Name = "dataGridViewCapNhatDiem_45";
             this.dataGridViewCapNhatDiem_45.ReadOnly = true;
             this.dataGridViewCapNhatDiem_45.RowHeadersWidth = 51;
@@ -209,56 +259,6 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewCapNhatDiem_45.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCapNhatDiem_45.Size = new System.Drawing.Size(994, 456);
             this.dataGridViewCapNhatDiem_45.TabIndex = 17;
-            // 
-            // labelDiemLichSu
-            // 
-            this.labelDiemLichSu.AutoSize = true;
-            this.labelDiemLichSu.Location = new System.Drawing.Point(99, 411);
-            this.labelDiemLichSu.Name = "labelDiemLichSu";
-            this.labelDiemLichSu.Size = new System.Drawing.Size(63, 20);
-            this.labelDiemLichSu.TabIndex = 0;
-            this.labelDiemLichSu.Text = "Địa Lý";
-            // 
-            // textBoxDiemDiaLy
-            // 
-            this.textBoxDiemDiaLy.Location = new System.Drawing.Point(231, 408);
-            this.textBoxDiemDiaLy.Name = "textBoxDiemDiaLy";
-            this.textBoxDiemDiaLy.Size = new System.Drawing.Size(79, 26);
-            this.textBoxDiemDiaLy.TabIndex = 3;
-            this.textBoxDiemDiaLy.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(441, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(994, 456);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 362);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Lịch Sử";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // textBoxDiemLichSu
-            // 
-            this.textBoxDiemLichSu.Location = new System.Drawing.Point(231, 356);
-            this.textBoxDiemLichSu.Name = "textBoxDiemLichSu";
-            this.textBoxDiemLichSu.Size = new System.Drawing.Size(79, 26);
-            this.textBoxDiemLichSu.TabIndex = 3;
-            this.textBoxDiemLichSu.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // buttonCapNhatDiem_45
             // 
@@ -282,8 +282,8 @@ namespace DoAn_Demo.UI.UI_Default
             this.Size = new System.Drawing.Size(1501, 616);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +297,7 @@ namespace DoAn_Demo.UI.UI_Default
         private System.Windows.Forms.TextBox textBoxDiemTiengAnh_45;
         private System.Windows.Forms.TextBox textBoxDiemTiengViet_45;
         private System.Windows.Forms.TextBox textBoxDiemToan_45;
-        private System.Windows.Forms.TextBox textBoxNameCapNhatDiem_45;
+        private System.Windows.Forms.TextBox textBoxIDCapNhatDiem_45;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

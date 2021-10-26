@@ -30,11 +30,14 @@ namespace DoAn_Demo.UI
         private void InitializeComponent()
         {
             this.tabControlCNTTHocSinh = new System.Windows.Forms.TabControl();
+            this.tabPageCapNhatDiem = new System.Windows.Forms.TabPage();
+            this.panelCapNhatDiem = new System.Windows.Forms.Panel();
             this.tabPageQLTTHocSinh = new System.Windows.Forms.TabPage();
-            this.buttonCapNhatDiem = new System.Windows.Forms.Button();
-            this.buttonInsert = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.panelCapNhatThongTinHS = new System.Windows.Forms.Panel();
+            this.tabControlChucNang = new System.Windows.Forms.TabControl();
+            this.tabPageSuaHocSinh = new System.Windows.Forms.TabPage();
+            this.tabPageThemHocSinh = new System.Windows.Forms.TabPage();
+            this.buttonKMFDLKSN = new System.Windows.Forms.Button();
             this.textBoxSeach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,14 +61,39 @@ namespace DoAn_Demo.UI
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewHocSinh = new System.Windows.Forms.DataGridView();
-            this.tabPageCapNhatDiem = new System.Windows.Forms.TabPage();
-            this.panelCapNhatDiem = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonNuThemHS = new System.Windows.Forms.RadioButton();
+            this.radioButtonNamThemHS = new System.Windows.Forms.RadioButton();
+            this.textBoxSDTThemHS = new System.Windows.Forms.TextBox();
+            this.textBoxDiaChiThemHS = new System.Windows.Forms.TextBox();
+            this.textBoxPhuHuynhThemHS = new System.Windows.Forms.TextBox();
+            this.textBoxNameThemHS = new System.Windows.Forms.TextBox();
+            this.dateTimePickerNTNSThemHS = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerNNHThemHS = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.tabPageDeleteHS = new System.Windows.Forms.TabPage();
+            this.textBoxIDXoaHS = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.tabControlCNTTHocSinh.SuspendLayout();
+            this.tabPageCapNhatDiem.SuspendLayout();
             this.tabPageQLTTHocSinh.SuspendLayout();
+            this.panelCapNhatThongTinHS.SuspendLayout();
+            this.tabControlChucNang.SuspendLayout();
+            this.tabPageSuaHocSinh.SuspendLayout();
+            this.tabPageThemHocSinh.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).BeginInit();
-            this.tabPageCapNhatDiem.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPageDeleteHS.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlCNTTHocSinh
@@ -78,15 +106,30 @@ namespace DoAn_Demo.UI
             this.tabControlCNTTHocSinh.Size = new System.Drawing.Size(1522, 649);
             this.tabControlCNTTHocSinh.TabIndex = 0;
             // 
+            // tabPageCapNhatDiem
+            // 
+            this.tabPageCapNhatDiem.Controls.Add(this.panelCapNhatDiem);
+            this.tabPageCapNhatDiem.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCapNhatDiem.Name = "tabPageCapNhatDiem";
+            this.tabPageCapNhatDiem.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCapNhatDiem.Size = new System.Drawing.Size(1514, 620);
+            this.tabPageCapNhatDiem.TabIndex = 1;
+            this.tabPageCapNhatDiem.Text = "Cập Nhật Điểm";
+            this.tabPageCapNhatDiem.UseVisualStyleBackColor = true;
+            // 
+            // panelCapNhatDiem
+            // 
+            this.panelCapNhatDiem.Location = new System.Drawing.Point(3, 3);
+            this.panelCapNhatDiem.Name = "panelCapNhatDiem";
+            this.panelCapNhatDiem.Size = new System.Drawing.Size(1501, 616);
+            this.panelCapNhatDiem.TabIndex = 0;
+            this.panelCapNhatDiem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCapNhatDiem_Paint);
+            // 
             // tabPageQLTTHocSinh
             // 
-            this.tabPageQLTTHocSinh.Controls.Add(this.buttonCapNhatDiem);
-            this.tabPageQLTTHocSinh.Controls.Add(this.buttonInsert);
-            this.tabPageQLTTHocSinh.Controls.Add(this.buttonDelete);
-            this.tabPageQLTTHocSinh.Controls.Add(this.buttonUpdate);
-            this.tabPageQLTTHocSinh.Controls.Add(this.textBoxSeach);
+            this.tabPageQLTTHocSinh.Controls.Add(this.panelCapNhatThongTinHS);
             this.tabPageQLTTHocSinh.Controls.Add(this.label1);
-            this.tabPageQLTTHocSinh.Controls.Add(this.groupBox1);
+            this.tabPageQLTTHocSinh.Controls.Add(this.textBoxSeach);
             this.tabPageQLTTHocSinh.Controls.Add(this.dataGridViewHocSinh);
             this.tabPageQLTTHocSinh.Location = new System.Drawing.Point(4, 25);
             this.tabPageQLTTHocSinh.Name = "tabPageQLTTHocSinh";
@@ -96,58 +139,77 @@ namespace DoAn_Demo.UI
             this.tabPageQLTTHocSinh.Text = "Cập Nhật Thông Tin Học Sinh";
             this.tabPageQLTTHocSinh.UseVisualStyleBackColor = true;
             // 
-            // buttonCapNhatDiem
+            // panelCapNhatThongTinHS
             // 
-            this.buttonCapNhatDiem.Location = new System.Drawing.Point(404, 561);
-            this.buttonCapNhatDiem.Name = "buttonCapNhatDiem";
-            this.buttonCapNhatDiem.Size = new System.Drawing.Size(135, 38);
-            this.buttonCapNhatDiem.TabIndex = 14;
-            this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
-            this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
+            this.panelCapNhatThongTinHS.Controls.Add(this.tabControlChucNang);
+            this.panelCapNhatThongTinHS.Location = new System.Drawing.Point(0, 1);
+            this.panelCapNhatThongTinHS.Name = "panelCapNhatThongTinHS";
+            this.panelCapNhatThongTinHS.Size = new System.Drawing.Size(643, 620);
+            this.panelCapNhatThongTinHS.TabIndex = 0;
             // 
-            // buttonInsert
+            // tabControlChucNang
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(41, 561);
-            this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(87, 38);
-            this.buttonInsert.TabIndex = 15;
-            this.buttonInsert.Text = "Thêm";
-            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.tabControlChucNang.Controls.Add(this.tabPageSuaHocSinh);
+            this.tabControlChucNang.Controls.Add(this.tabPageThemHocSinh);
+            this.tabControlChucNang.Controls.Add(this.tabPageDeleteHS);
+            this.tabControlChucNang.Location = new System.Drawing.Point(3, 0);
+            this.tabControlChucNang.Name = "tabControlChucNang";
+            this.tabControlChucNang.SelectedIndex = 0;
+            this.tabControlChucNang.Size = new System.Drawing.Size(640, 602);
+            this.tabControlChucNang.TabIndex = 0;
             // 
-            // buttonDelete
+            // tabPageSuaHocSinh
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(286, 561);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(84, 38);
-            this.buttonDelete.TabIndex = 13;
-            this.buttonDelete.Text = "Xóa";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.tabPageSuaHocSinh.Controls.Add(this.buttonUpdate);
+            this.tabPageSuaHocSinh.Controls.Add(this.buttonKMFDLKSN);
+            this.tabPageSuaHocSinh.Controls.Add(this.groupBox1);
+            this.tabPageSuaHocSinh.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSuaHocSinh.Name = "tabPageSuaHocSinh";
+            this.tabPageSuaHocSinh.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSuaHocSinh.Size = new System.Drawing.Size(632, 573);
+            this.tabPageSuaHocSinh.TabIndex = 0;
+            this.tabPageSuaHocSinh.Text = "Sửa Thông Tin Học Sinh";
+            this.tabPageSuaHocSinh.UseVisualStyleBackColor = true;
             // 
-            // buttonUpdate
+            // tabPageThemHocSinh
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(161, 561);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(93, 38);
-            this.buttonUpdate.TabIndex = 12;
-            this.buttonUpdate.Text = "Sửa";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.tabPageThemHocSinh.Controls.Add(this.buttonInsert);
+            this.tabPageThemHocSinh.Controls.Add(this.groupBox2);
+            this.tabPageThemHocSinh.Location = new System.Drawing.Point(4, 25);
+            this.tabPageThemHocSinh.Name = "tabPageThemHocSinh";
+            this.tabPageThemHocSinh.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageThemHocSinh.Size = new System.Drawing.Size(632, 573);
+            this.tabPageThemHocSinh.TabIndex = 1;
+            this.tabPageThemHocSinh.Text = "Thêm Học Sinh";
+            this.tabPageThemHocSinh.UseVisualStyleBackColor = true;
+            // 
+            // buttonKMFDLKSN
+            // 
+            this.buttonKMFDLKSN.Location = new System.Drawing.Point(-195, 479);
+            this.buttonKMFDLKSN.Name = "buttonKMFDLKSN";
+            this.buttonKMFDLKSN.Size = new System.Drawing.Size(87, 38);
+            this.buttonKMFDLKSN.TabIndex = 22;
+            this.buttonKMFDLKSN.Text = "Thêm";
+            this.buttonKMFDLKSN.UseCompatibleTextRendering = true;
+            this.buttonKMFDLKSN.UseVisualStyleBackColor = true;
+            this.buttonKMFDLKSN.Visible = false;
             // 
             // textBoxSeach
             // 
             this.textBoxSeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSeach.Location = new System.Drawing.Point(1070, 24);
+            this.textBoxSeach.Location = new System.Drawing.Point(1147, 20);
             this.textBoxSeach.Name = "textBoxSeach";
             this.textBoxSeach.Size = new System.Drawing.Size(318, 26);
-            this.textBoxSeach.TabIndex = 9;
+            this.textBoxSeach.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(964, 30);
+            this.label1.Location = new System.Drawing.Point(1049, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 16;
             this.label1.Text = "Tìm Kiếm";
             // 
             // groupBox1
@@ -172,10 +234,10 @@ namespace DoAn_Demo.UI
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(31, 30);
+            this.groupBox1.Location = new System.Drawing.Point(6, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(591, 525);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.Size = new System.Drawing.Size(614, 498);
+            this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Học Sinh";
             // 
@@ -344,33 +406,222 @@ namespace DoAn_Demo.UI
             this.dataGridViewHocSinh.AllowUserToDeleteRows = false;
             this.dataGridViewHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHocSinh.Location = new System.Drawing.Point(628, 67);
+            this.dataGridViewHocSinh.Location = new System.Drawing.Point(649, 52);
             this.dataGridViewHocSinh.Name = "dataGridViewHocSinh";
             this.dataGridViewHocSinh.ReadOnly = true;
             this.dataGridViewHocSinh.RowHeadersWidth = 51;
             this.dataGridViewHocSinh.RowTemplate.Height = 24;
             this.dataGridViewHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHocSinh.Size = new System.Drawing.Size(839, 488);
-            this.dataGridViewHocSinh.TabIndex = 11;
+            this.dataGridViewHocSinh.Size = new System.Drawing.Size(816, 488);
+            this.dataGridViewHocSinh.TabIndex = 19;
             // 
-            // tabPageCapNhatDiem
+            // groupBox2
             // 
-            this.tabPageCapNhatDiem.Controls.Add(this.panelCapNhatDiem);
-            this.tabPageCapNhatDiem.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCapNhatDiem.Name = "tabPageCapNhatDiem";
-            this.tabPageCapNhatDiem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCapNhatDiem.Size = new System.Drawing.Size(1514, 620);
-            this.tabPageCapNhatDiem.TabIndex = 1;
-            this.tabPageCapNhatDiem.Text = "Cập Nhật Điểm";
-            this.tabPageCapNhatDiem.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.radioButtonNuThemHS);
+            this.groupBox2.Controls.Add(this.radioButtonNamThemHS);
+            this.groupBox2.Controls.Add(this.textBoxSDTThemHS);
+            this.groupBox2.Controls.Add(this.textBoxDiaChiThemHS);
+            this.groupBox2.Controls.Add(this.textBoxPhuHuynhThemHS);
+            this.groupBox2.Controls.Add(this.textBoxNameThemHS);
+            this.groupBox2.Controls.Add(this.dateTimePickerNTNSThemHS);
+            this.groupBox2.Controls.Add(this.dateTimePickerNNHThemHS);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(4, 37);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(614, 477);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông Tin Học Sinh";
             // 
-            // panelCapNhatDiem
+            // radioButtonNuThemHS
             // 
-            this.panelCapNhatDiem.Location = new System.Drawing.Point(3, 3);
-            this.panelCapNhatDiem.Name = "panelCapNhatDiem";
-            this.panelCapNhatDiem.Size = new System.Drawing.Size(1501, 616);
-            this.panelCapNhatDiem.TabIndex = 0;
-            this.panelCapNhatDiem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCapNhatDiem_Paint);
+            this.radioButtonNuThemHS.AutoSize = true;
+            this.radioButtonNuThemHS.Location = new System.Drawing.Point(466, 132);
+            this.radioButtonNuThemHS.Name = "radioButtonNuThemHS";
+            this.radioButtonNuThemHS.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonNuThemHS.TabIndex = 4;
+            this.radioButtonNuThemHS.TabStop = true;
+            this.radioButtonNuThemHS.Text = "Nữ";
+            this.radioButtonNuThemHS.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNamThemHS
+            // 
+            this.radioButtonNamThemHS.AutoSize = true;
+            this.radioButtonNamThemHS.Location = new System.Drawing.Point(336, 132);
+            this.radioButtonNamThemHS.Name = "radioButtonNamThemHS";
+            this.radioButtonNamThemHS.Size = new System.Drawing.Size(68, 24);
+            this.radioButtonNamThemHS.TabIndex = 4;
+            this.radioButtonNamThemHS.TabStop = true;
+            this.radioButtonNamThemHS.Text = "Nam";
+            this.radioButtonNamThemHS.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSDTThemHS
+            // 
+            this.textBoxSDTThemHS.Location = new System.Drawing.Point(244, 288);
+            this.textBoxSDTThemHS.Name = "textBoxSDTThemHS";
+            this.textBoxSDTThemHS.Size = new System.Drawing.Size(329, 26);
+            this.textBoxSDTThemHS.TabIndex = 3;
+            // 
+            // textBoxDiaChiThemHS
+            // 
+            this.textBoxDiaChiThemHS.Location = new System.Drawing.Point(244, 234);
+            this.textBoxDiaChiThemHS.Name = "textBoxDiaChiThemHS";
+            this.textBoxDiaChiThemHS.Size = new System.Drawing.Size(329, 26);
+            this.textBoxDiaChiThemHS.TabIndex = 3;
+            // 
+            // textBoxPhuHuynhThemHS
+            // 
+            this.textBoxPhuHuynhThemHS.Location = new System.Drawing.Point(250, 181);
+            this.textBoxPhuHuynhThemHS.Name = "textBoxPhuHuynhThemHS";
+            this.textBoxPhuHuynhThemHS.Size = new System.Drawing.Size(329, 26);
+            this.textBoxPhuHuynhThemHS.TabIndex = 3;
+            // 
+            // textBoxNameThemHS
+            // 
+            this.textBoxNameThemHS.Location = new System.Drawing.Point(250, 78);
+            this.textBoxNameThemHS.Name = "textBoxNameThemHS";
+            this.textBoxNameThemHS.Size = new System.Drawing.Size(329, 26);
+            this.textBoxNameThemHS.TabIndex = 3;
+            // 
+            // dateTimePickerNTNSThemHS
+            // 
+            this.dateTimePickerNTNSThemHS.Location = new System.Drawing.Point(244, 352);
+            this.dateTimePickerNTNSThemHS.Name = "dateTimePickerNTNSThemHS";
+            this.dateTimePickerNTNSThemHS.Size = new System.Drawing.Size(333, 26);
+            this.dateTimePickerNTNSThemHS.TabIndex = 1;
+            // 
+            // dateTimePickerNNHThemHS
+            // 
+            this.dateTimePickerNNHThemHS.Location = new System.Drawing.Point(246, 403);
+            this.dateTimePickerNNHThemHS.Name = "dateTimePickerNNHThemHS";
+            this.dateTimePickerNNHThemHS.Size = new System.Drawing.Size(333, 26);
+            this.dateTimePickerNNHThemHS.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 132);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Gioi Tính";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(14, 403);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(140, 20);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Ngày Nhập Học";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 291);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(127, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Số Điện Thoại";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 234);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(71, 20);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Địa Chỉ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 358);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(195, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Ngày Tháng Năm Sinh";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 181);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Phụ Huynh";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(16, 78);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(98, 20);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Họ Và Tên";
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(15, 520);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(120, 38);
+            this.buttonUpdate.TabIndex = 23;
+            this.buttonUpdate.Text = "Sửa";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(20, 520);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(100, 38);
+            this.buttonInsert.TabIndex = 21;
+            this.buttonInsert.Text = "Thêm";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            // 
+            // tabPageDeleteHS
+            // 
+            this.tabPageDeleteHS.Controls.Add(this.buttonDelete);
+            this.tabPageDeleteHS.Controls.Add(this.textBoxIDXoaHS);
+            this.tabPageDeleteHS.Controls.Add(this.label12);
+            this.tabPageDeleteHS.Location = new System.Drawing.Point(4, 25);
+            this.tabPageDeleteHS.Name = "tabPageDeleteHS";
+            this.tabPageDeleteHS.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDeleteHS.Size = new System.Drawing.Size(632, 573);
+            this.tabPageDeleteHS.TabIndex = 2;
+            this.tabPageDeleteHS.Text = "Xóa Thông Tin Học Sinh";
+            this.tabPageDeleteHS.UseVisualStyleBackColor = true;
+            // 
+            // textBoxIDXoaHS
+            // 
+            this.textBoxIDXoaHS.Location = new System.Drawing.Point(266, 64);
+            this.textBoxIDXoaHS.Name = "textBoxIDXoaHS";
+            this.textBoxIDXoaHS.Size = new System.Drawing.Size(329, 22);
+            this.textBoxIDXoaHS.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(36, 67);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 17);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "ID Học Sinh Cần Xóa";
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(509, 129);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(86, 37);
+            this.buttonDelete.TabIndex = 6;
+            this.buttonDelete.Text = "Xóa";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // UserControlQLHS
             // 
@@ -380,12 +631,20 @@ namespace DoAn_Demo.UI
             this.Name = "UserControlQLHS";
             this.Size = new System.Drawing.Size(1522, 649);
             this.tabControlCNTTHocSinh.ResumeLayout(false);
+            this.tabPageCapNhatDiem.ResumeLayout(false);
             this.tabPageQLTTHocSinh.ResumeLayout(false);
             this.tabPageQLTTHocSinh.PerformLayout();
+            this.panelCapNhatThongTinHS.ResumeLayout(false);
+            this.tabControlChucNang.ResumeLayout(false);
+            this.tabPageSuaHocSinh.ResumeLayout(false);
+            this.tabPageThemHocSinh.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).EndInit();
-            this.tabPageCapNhatDiem.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabPageDeleteHS.ResumeLayout(false);
+            this.tabPageDeleteHS.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,13 +652,14 @@ namespace DoAn_Demo.UI
         #endregion
 
         private System.Windows.Forms.TabControl tabControlCNTTHocSinh;
+        private System.Windows.Forms.TabPage tabPageCapNhatDiem;
+        private System.Windows.Forms.Panel panelCapNhatDiem;
         private System.Windows.Forms.TabPage tabPageQLTTHocSinh;
-        private System.Windows.Forms.Button buttonCapNhatDiem;
-        private System.Windows.Forms.Button buttonInsert;
-        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Panel panelCapNhatThongTinHS;
+        private System.Windows.Forms.TabControl tabControlChucNang;
+        private System.Windows.Forms.TabPage tabPageSuaHocSinh;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.TextBox textBoxSeach;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonKMFDLKSN;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButtonNu;
         private System.Windows.Forms.RadioButton radioButtonNam;
@@ -420,9 +680,30 @@ namespace DoAn_Demo.UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabPageThemHocSinh;
+        private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButtonNuThemHS;
+        private System.Windows.Forms.RadioButton radioButtonNamThemHS;
+        private System.Windows.Forms.TextBox textBoxSDTThemHS;
+        private System.Windows.Forms.TextBox textBoxDiaChiThemHS;
+        private System.Windows.Forms.TextBox textBoxPhuHuynhThemHS;
+        private System.Windows.Forms.TextBox textBoxNameThemHS;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNTNSThemHS;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNNHThemHS;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabPageDeleteHS;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.TextBox textBoxIDXoaHS;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxSeach;
         private System.Windows.Forms.DataGridView dataGridViewHocSinh;
-        private System.Windows.Forms.TabPage tabPageCapNhatDiem;
-        private System.Windows.Forms.Panel panelCapNhatDiem;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
