@@ -35,5 +35,29 @@ namespace DoAn_Demo.Entities
         public virtual GiaoVien GiaoVien { get; set; }
 
         public virtual LoaiLop LoaiLop { get; set; }
+
+        public void EditTenLop(string value)
+        {
+            this.TenLop = value;
+        }
+
+        public void EditIDGV(int value)
+        {
+            this.IDGV = value;
+        }
+
+        public void EditIDLoaiLop(int value)
+        {
+            this.IDLoaiLop = value;
+        }
+
+        public string GetInfor()
+        {
+            return "IDLopHoc: " + IDLopHoc +
+                    "TenLop: " + TenLop +
+                    "SiSo: " + SiSo +
+                    "IDGV: " + GiaoVien.HoTen +
+                    "IDLoaiLop: " + LoaiLop.TenLoaiLop;
+        }
     }
 }

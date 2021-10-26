@@ -28,5 +28,23 @@ namespace DoAn_Demo.Entities
         public virtual ICollection<CTBangDiem> CTBangDiems { get; set; }
 
         public virtual LoaiLop LoaiLop { get; set; }
+
+        public void EditIDLoaiLop(int value)
+        {
+            this.IDLoaiLop = value;
+        }
+
+        public void EditTenMH(string value)
+        {
+            this.TenMH = value;
+        }
+
+        public string GetInfor()
+        {
+            return "IDMH: " + IDMH +
+                    "TenMH: " + TenMH +
+                    "IDLoaiLop: " + IDLoaiLop +
+                    "TenLoaiLop: " + LoaiLop.TenLoaiLop;
+        }
     }
 }
