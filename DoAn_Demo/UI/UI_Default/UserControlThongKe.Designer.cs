@@ -29,22 +29,22 @@ namespace DoAn_Demo.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerThongKe = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reportViewerThongKe
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(78, 64);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1041, 533);
-            this.reportViewer1.TabIndex = 0;
+            this.reportViewerThongKe.Location = new System.Drawing.Point(78, 64);
+            this.reportViewerThongKe.Name = "reportViewerThongKe";
+            this.reportViewerThongKe.ServerReport.BearerToken = null;
+            this.reportViewerThongKe.Size = new System.Drawing.Size(1041, 533);
+            this.reportViewerThongKe.TabIndex = 0;
             // 
             // UserControlThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.reportViewerThongKe);
             this.Name = "UserControlThongKe";
             this.Size = new System.Drawing.Size(1522, 649);
             this.ResumeLayout(false);
@@ -53,6 +53,6 @@ namespace DoAn_Demo.UI
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerThongKe;
     }
 }

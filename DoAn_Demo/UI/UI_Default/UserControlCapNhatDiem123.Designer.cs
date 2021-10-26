@@ -33,17 +33,17 @@ namespace DoAn_Demo.UI
             this.radioButtonCuoiHK1 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxNameCapNhatDiem = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxIDCapNhatDiem = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridViewCapNhatDiem = new System.Windows.Forms.DataGridView();
             this.buttonCapNhatDiem = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@ namespace DoAn_Demo.UI
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBoxNameCapNhatDiem);
+            this.groupBox2.Controls.Add(this.textBoxIDCapNhatDiem);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label2);
@@ -101,12 +101,60 @@ namespace DoAn_Demo.UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Học Sinh";
             // 
-            // textBoxNameCapNhatDiem
+            // textBox3
             // 
-            this.textBoxNameCapNhatDiem.Location = new System.Drawing.Point(146, 113);
-            this.textBoxNameCapNhatDiem.Name = "textBoxNameCapNhatDiem";
-            this.textBoxNameCapNhatDiem.Size = new System.Drawing.Size(269, 26);
-            this.textBoxNameCapNhatDiem.TabIndex = 3;
+            this.textBox3.Location = new System.Drawing.Point(231, 309);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(79, 26);
+            this.textBox3.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(231, 265);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(79, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(231, 220);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(79, 26);
+            this.textBox1.TabIndex = 3;
+            // 
+            // textBoxIDCapNhatDiem
+            // 
+            this.textBoxIDCapNhatDiem.Location = new System.Drawing.Point(146, 113);
+            this.textBoxIDCapNhatDiem.Name = "textBoxIDCapNhatDiem";
+            this.textBoxIDCapNhatDiem.Size = new System.Drawing.Size(269, 26);
+            this.textBoxIDCapNhatDiem.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(99, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tiếng Anh";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(99, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tiếng Việt";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 220);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Toán";
             // 
             // label12
             // 
@@ -122,9 +170,9 @@ namespace DoAn_Demo.UI
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(6, 116);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 20);
+            this.label19.Size = new System.Drawing.Size(111, 20);
             this.label19.TabIndex = 0;
-            this.label19.Text = "Họ Và Tên";
+            this.label19.Text = "ID Học Sinh";
             // 
             // dataGridViewCapNhatDiem
             // 
@@ -151,54 +199,6 @@ namespace DoAn_Demo.UI
             this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
             this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Toán";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 265);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tiếng Việt";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 315);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tiếng Anh";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(231, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 26);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(231, 265);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 26);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(231, 309);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 26);
-            this.textBox3.TabIndex = 3;
-            // 
             // UserControlCapNhatDiem123
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,7 +221,7 @@ namespace DoAn_Demo.UI
         private System.Windows.Forms.RadioButton radioButtonCuoiHK1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxNameCapNhatDiem;
+        private System.Windows.Forms.TextBox textBoxIDCapNhatDiem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridViewCapNhatDiem;

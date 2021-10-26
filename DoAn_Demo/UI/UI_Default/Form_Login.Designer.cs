@@ -36,7 +36,6 @@ namespace DoAn_Demo
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.textBoxSDT = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -108,17 +107,6 @@ namespace DoAn_Demo
             this.textBoxSDT.Size = new System.Drawing.Size(301, 36);
             this.textBoxSDT.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(326, 305);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Đăng Xuất";
-            this.button1.UseVisualStyleBackColor = true;
-       
-            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,7 +117,6 @@ namespace DoAn_Demo
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonExit);
             this.Name = "Form_Login";
@@ -148,7 +135,6 @@ namespace DoAn_Demo
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPass;
         private System.Windows.Forms.TextBox textBoxSDT;
-        private System.Windows.Forms.Button button1;
     }
 }
 
