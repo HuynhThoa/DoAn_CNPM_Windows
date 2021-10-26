@@ -26,21 +26,5 @@ namespace DoAn_Demo.Entities
         public virtual HocSinh HocSinh { get; set; }
 
         public virtual LopHoc LopHoc { get; set; }
-
-        public void EditIDBXL(int value)
-        {
-            this.IDBXL = value;
-        }
-
-        public string GetInfor()
-        {
-            return "IDLopHoc: " + IDLopHoc +
-                    "TenLop: " + LopHoc.TenLop +
-                    "IDHS: " + IDHS +
-                    "TenHS: " + HocSinh.TenHS +
-                    "IDBXL: " + IDBXL;
-        }
-
-
     }
 }
