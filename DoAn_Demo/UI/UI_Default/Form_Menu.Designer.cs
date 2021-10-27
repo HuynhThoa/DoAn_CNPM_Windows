@@ -57,7 +57,7 @@ namespace DoAn_Demo
             this.ToolStripMenuItemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1531, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1531, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,7 +69,7 @@ namespace DoAn_Demo
             this.ToolStripMenuItemTK,
             this.ToolStripMenuItemLogout});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.chứcNăngToolStripMenuItem.Text = "Chức Năng";
             // 
             // ToolStripMenuItemQLHS
@@ -78,6 +78,7 @@ namespace DoAn_Demo
             this.ToolStripMenuItemQLHS.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.ToolStripMenuItemQLHS.Size = new System.Drawing.Size(309, 26);
             this.ToolStripMenuItemQLHS.Text = "Quản Lý Học Sinh";
+            this.ToolStripMenuItemQLHS.Click += new System.EventHandler(this.ToolStripMenuItemQLHS_Click);
             // 
             // ToolStripMenuItemTTGV
             // 
@@ -85,6 +86,7 @@ namespace DoAn_Demo
             this.ToolStripMenuItemTTGV.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.ToolStripMenuItemTTGV.Size = new System.Drawing.Size(309, 26);
             this.ToolStripMenuItemTTGV.Text = "Xem Thông Tin Giao Viên";
+            this.ToolStripMenuItemTTGV.Click += new System.EventHandler(this.ToolStripMenuItemTTGV_Click);
             // 
             // ToolStripMenuItemTK
             // 
@@ -139,13 +141,13 @@ namespace DoAn_Demo
             // ToolStripMenuItemHome
             // 
             this.ToolStripMenuItemHome.Name = "ToolStripMenuItemHome";
-            this.ToolStripMenuItemHome.Size = new System.Drawing.Size(64, 26);
+            this.ToolStripMenuItemHome.Size = new System.Drawing.Size(64, 24);
             this.ToolStripMenuItemHome.Text = "Home";
             // 
             // ToolStripMenuItemHelp
             // 
             this.ToolStripMenuItemHelp.Name = "ToolStripMenuItemHelp";
-            this.ToolStripMenuItemHelp.Size = new System.Drawing.Size(55, 26);
+            this.ToolStripMenuItemHelp.Size = new System.Drawing.Size(55, 24);
             this.ToolStripMenuItemHelp.Text = "Help";
             // 
             // contextMenuStrip1
