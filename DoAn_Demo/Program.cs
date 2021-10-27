@@ -16,7 +16,7 @@ namespace DoAn_Demo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Menu());
+            Application.Run(new Form_Login());
         }
     }
 }

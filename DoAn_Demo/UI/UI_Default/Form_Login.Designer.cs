@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace DoAn_Demo
 {
     partial class Form_Login
@@ -47,6 +49,7 @@ namespace DoAn_Demo
             this.buttonExit.TabIndex = 0;
             this.buttonExit.Text = "Thoát";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonLogin
             // 
@@ -57,6 +60,7 @@ namespace DoAn_Demo
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "Đăng Nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // label1
             // 
@@ -125,6 +129,8 @@ namespace DoAn_Demo
             this.PerformLayout();
 
         }
+
+      
 
         #endregion
 
