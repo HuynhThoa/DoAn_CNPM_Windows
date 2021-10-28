@@ -277,6 +277,7 @@ namespace DoAn_Demo.UI
             this.textBoxIDHS.Name = "textBoxIDHS";
             this.textBoxIDHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxIDHS.TabIndex = 3;
+            this.textBoxIDHS.TextChanged += new System.EventHandler(this.textBoxIDHS_TextChanged);
             // 
             // dateTimePickerNTH
             // 
@@ -447,6 +448,7 @@ namespace DoAn_Demo.UI
             this.textBoxSDTThemHS.Name = "textBoxSDTThemHS";
             this.textBoxSDTThemHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxSDTThemHS.TabIndex = 3;
+            this.textBoxSDTThemHS.TextChanged += new System.EventHandler(this.textBoxSDTThemHS_TextChanged);
             // 
             // textBoxDiaChiThemHS
             // 
@@ -454,6 +456,7 @@ namespace DoAn_Demo.UI
             this.textBoxDiaChiThemHS.Name = "textBoxDiaChiThemHS";
             this.textBoxDiaChiThemHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxDiaChiThemHS.TabIndex = 3;
+            this.textBoxDiaChiThemHS.TextChanged += new System.EventHandler(this.textBoxDiaChiThemHS_TextChanged);
             // 
             // textBoxPhuHuynhThemHS
             // 
@@ -461,6 +464,7 @@ namespace DoAn_Demo.UI
             this.textBoxPhuHuynhThemHS.Name = "textBoxPhuHuynhThemHS";
             this.textBoxPhuHuynhThemHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxPhuHuynhThemHS.TabIndex = 3;
+            this.textBoxPhuHuynhThemHS.TextChanged += new System.EventHandler(this.textBoxNameThemHS_TextChanged);
             // 
             // textBoxNameThemHS
             // 
@@ -468,6 +472,7 @@ namespace DoAn_Demo.UI
             this.textBoxNameThemHS.Name = "textBoxNameThemHS";
             this.textBoxNameThemHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxNameThemHS.TabIndex = 3;
+            this.textBoxNameThemHS.TextChanged += new System.EventHandler(this.textBoxNameThemHS_TextChanged);
             // 
             // dateTimePickerNTNSThemHS
             // 

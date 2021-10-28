@@ -43,22 +43,105 @@ namespace DoAn_Demo.UI
             this.lop = lopHoc;
             this.danhSachHocSinh = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
             FillData(danhSachHocSinh);
-            
+
         }
 
+
+        #region method
         private void FillData(List<DanhSachLop> danhSaches)
         {
             dataGridViewHocSinh.Rows.Clear();
             if (danhSaches != null)
             {
+
+                string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
+                dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS, gioiTinh,
+                                               ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
+
                 foreach (DanhSachLop ds in danhSaches)
                 {
                     string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
                     dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS, ds.HocSinh.GioiTinh,
                                                   ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
                 }
+
             }
         }
+        private DateTime Convert(string date)
+        {
+            string[] regex = { "/", " ", ":" };
+            string[] arrStr = date.Split(regex, System.StringSplitOptions.RemoveEmptyEntries);
+
+            int dd = int.Parse(arrStr[0]);
+            int mm = int.Parse(arrStr[1]);
+            int yyyy = int.Parse(arrStr[2]);
+            int hh = int.Parse(arrStr[3]);
+            return new DateTime(yyyy, mm, dd, hh, 00, 0);
+        }
+
+        public bool Check_HoTen(string hoTen)
+        {
+            foreach (char c in hoTen)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        Action<string, string> ShowErr = (s1, s2) => MessageBox.Show(s1, s2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        private void Create_CTBangDiem()
+        {
+            BangXepLoai bangXepLoai = service.GetBangXepLoaiNew();
+            List<MonHoc> monHocs = GetListMonHoc();
+            CTBangDiem ct;
+            foreach (MonHoc mon in monHocs)
+            {
+                ct = new CTBangDiem() { IDBXL = bangXepLoai.IDBXL, IDMH = mon.IDMH };
+                service.AddCT_BangDiem(ct);
+            }
+        }
+        public List<MonHoc> GetListMonHoc()
+        {
+            List<MonHoc> monHocs;
+            switch (lop.IDLoaiLop)
+            {
+                case 1:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains("1"));
+                    break;
+                case 2:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains("2"));
+                    break;
+                case 3:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains("3"));
+                    break;
+                case 4:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains("4"));
+                    break;
+                default:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains("5"));
+                    break;
+            }
+            return monHocs;
+        }
+
+
+        private void Create_bangXepLoai()
+        {
+            int nienKhoa = int.Parse(DateTime.Now.Year.ToString().Substring(2));
+            BangXepLoai bangXepLoai = new BangXepLoai() { XepLoai = null, HanhKiem = null, NienKhoa = nienKhoa };
+            service.CreateBangXepLoai(bangXepLoai);
+        }
+
+        Action<string> ShowInfo = s => MessageBox.Show(s,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+        #endregion
+
+
+
+        #region events
 
         private void UserControlQLHS_Load(object sender, EventArgs e)
         {
@@ -90,7 +173,7 @@ namespace DoAn_Demo.UI
                 if (gioiTinh.Contains("Nam"))
                 {
                     radioButtonNam.Checked =
-                    radioButtonNamThemHS.Checked =  true;
+                    radioButtonNamThemHS.Checked = true;
                 }
                 else
                 {
@@ -99,7 +182,7 @@ namespace DoAn_Demo.UI
                 }
                 textBoxDiaChiThemHS.Text = diaChi;
                 textBoxSDTThemHS.Text = sdt;
-                dateTimePickerNNH.Value = 
+                dateTimePickerNNH.Value =
                 dateTimePickerNNHThemHS.Value = nnh;
 
 
@@ -112,27 +195,12 @@ namespace DoAn_Demo.UI
 
                 //tabpage xóa học sinh
                 textBoxIDXoaHS.Text = idHS;
-                
+
             }
             catch { }
         }
 
-        /// <summary>
-        /// chuyển string về thành datetime nếu string có dạng date time
-        /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
-        private DateTime Convert(string date)
-        {
-            string[] regex = { "/", " ", ":" };
-            string[] arrStr = date.Split(regex,System.StringSplitOptions.RemoveEmptyEntries);
-
-            int dd = int.Parse(arrStr[0]);
-            int mm = int.Parse(arrStr[1]);
-            int yyyy = int.Parse(arrStr[2]);
-            int hh = int.Parse(arrStr[3]);
-            return new DateTime(yyyy, mm, dd, hh, 00, 0);
-        }
+       
 
         private void checkBoxThoiHoc_Click(object sender, EventArgs e)
         {
@@ -146,7 +214,7 @@ namespace DoAn_Demo.UI
 
         private void tabPageCapNhatDiem_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -172,9 +240,9 @@ namespace DoAn_Demo.UI
             string txtTimKiem = textBoxSeach.Text.Trim();
             if (txtTimKiem.Length > 0)
             {
-                List<DanhSachLop> list = danhSachHocSinh.Where( hs => hs.HocSinh.TenHS.Contains(txtTimKiem) || 
-                                                                hs.HocSinh.TenPH.Contains(txtTimKiem) || 
-                                                                hs.HocSinh.SDT.Contains(txtTimKiem)).ToList();
+                List<DanhSachLop> list = danhSachHocSinh.Where(hs => hs.HocSinh.TenHS.Contains(txtTimKiem) ||
+                                                               hs.HocSinh.TenPH.Contains(txtTimKiem) ||
+                                                               hs.HocSinh.SDT.Contains(txtTimKiem)).ToList();
                 FillData(list);
             }
             else
@@ -187,71 +255,102 @@ namespace DoAn_Demo.UI
         {
             try
             {
-                Create_bangXepLoai();
-                Create_CTBangDiem();
+                //tên học sinh
+                string tenHS = textBoxNameThemHS.Text.Trim();
+                if (!Check_HoTen(tenHS))
+                {
+                    ShowErr("Tên không hợp lệ", "Lỗi");
+                    return;
+                }
 
-                HocSinh hs = new HocSinh();
+                string tenPH = textBoxPhuHuynhThemHS.Text.Trim();
+                string diaChi = textBoxDiaChiThemHS.Text.Trim();
+
+                //sdt
+                string sdt = textBoxSDTThemHS.Text.Trim();
+                if (sdt.Length < 9)
+                {
+                    ShowErr("Số điện thoại phải > 9 và nhỏ hơn 13", "Thông báo");
+                    return;
+                }
+
+                //ngay thang
+                DateTime ntns = dateTimePickerNTNSThemHS.Value;
+                DateTime nnh = dateTimePickerNNHThemHS.Value;
+
+                // check giới tính
+                bool gioiTinh = false;
+                if (radioButtonNamThemHS.Checked)
+                {
+                    gioiTinh = true;
+                }
+
+
+                Create_bangXepLoai();
+                service.Save();
+                Create_CTBangDiem();
+                service.Save();
+
+                HocSinh hs = new HocSinh() { TenHS = tenHS, TenPH = tenPH, GioiTinh = gioiTinh, DiaChi = diaChi, NTNS = ntns, NNH = nnh, SDT = sdt };
+                service.Add_HS(hs);
+                service.Save();
+
+                service.JoinLopHoc(lop);
+                service.Save();
+
+                ShowInfo("Thêm sinh viên thành công");
+                danhSachHocSinh = service.GetDanhSachLop(l => l.IDLopHoc == lop.IDLopHoc);
+                FillData(danhSachHocSinh);
+                
             }
             catch (Exception ex)
             {
-                ShowErr(ex.Message,"Exception");
+                ShowErr(ex.Message, "Exception");
             }
 
         }
-        public bool Check_HoTen(string hoTen)
+        
+        private void textBoxIDHS_TextChanged(object sender, EventArgs e)
         {
-            foreach (char c in hoTen)
+
+        }
+
+
+
+        private void textBoxNameThemHS_TextChanged(object sender, EventArgs e)
+        {
+            string name = textBoxNameThemHS.Text.Trim();
+
+            if (name.Length > 100)
             {
-                if(c>= '0' && c <= '9')
-                {
-                    return false;
-                }
+                ShowErr("Kích thước tối đa 100 ký tự", "Thông báo");
+                textBoxNameThemHS.Text = name.Substring(0, name.Length - 1);
+                return;
             }
-            return true;
         }
-        Action<string, string> ShowErr = (s1, s2) => MessageBox.Show(s1, s2, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private void Create_CTBangDiem()
+        private void textBoxDiaChiThemHS_TextChanged(object sender, EventArgs e)
         {
-            BangXepLoai bangXepLoai = service.GetBangXepLoaiNew();
-            List<MonHoc> monHocs = GetListMonHoc();
-            CTBangDiem ct;
-            foreach (MonHoc mon in monHocs)
+            string dc = textBoxDiaChiThemHS.Text.Trim();
+            if (dc.Length > 200)
             {
-                ct = new CTBangDiem() { IDBXL = bangXepLoai.IDBXL, IDMH = mon.IDMH};
-                service.AddCT_BangDiem(ct);
+                ShowErr("Kích thước tối đa 200 ký tự", "Thông báo");
+                textBoxNameThemHS.Text = dc.Substring(0, dc.Length - 1);
+                return;
             }
         }
-        public List<MonHoc> GetListMonHoc()
+
+        #endregion
+
+        private void textBoxSDTThemHS_TextChanged(object sender, EventArgs e)
         {
-            List<MonHoc> monHocs;
-            switch (lop.IDLoaiLop)
+            string sdt = textBoxSDTThemHS.Text.Trim();
+            if (sdt.Length > 12)
             {
-                case 1:
-                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('1'));
-                    break;
-                case 2:
-                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('2'));
-                    break;
-                case 3:
-                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('3'));
-                    break;
-                case 4:
-                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('4'));
-                    break;
-                default:
-                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('5'));
-                    break;
+                ShowErr("Kích thước tối đa 12 ký tự", "Thông báo");
+                textBoxNameThemHS.Text = sdt.Substring(0, sdt.Length - 1);
+                return;
             }
-            return monHocs;
-        }
-
-
-        private void Create_bangXepLoai()
-        {
-            int nienKhoa = int.Parse(DateTime.Now.Year.ToString().Substring(2));
-            BangXepLoai bangXepLoai = new BangXepLoai() { XepLoai = null, HanhKiem = null, NienKhoa = nienKhoa };
-            service.CreateBangXepLoai(bangXepLoai);
         }
         Action<string> ShowMess = s => MessageBox.Show(s, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         /// <summary>

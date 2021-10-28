@@ -9,5 +9,6 @@ namespace DoAn_Demo.Data
 {
     interface ICTBangDiemRepository : IRepository<CTBangDiem>
     {
+
     }
 }
