@@ -116,5 +116,10 @@ namespace DoAn_Demo.Services
             cTBangDiemRepository.Add(ct);
             
         }
+        
+        public void Remove_DSLop (DanhSachLop dsl)
+        {
+            danhSachLopRepository.Delete(dsl);
+        }
     }
 }
