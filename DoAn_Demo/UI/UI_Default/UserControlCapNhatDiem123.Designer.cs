@@ -69,6 +69,7 @@ namespace DoAn_Demo.UI
             this.radioButtonCuoiHK1.TabStop = true;
             this.radioButtonCuoiHK1.Text = "Cuối HK1";
             this.radioButtonCuoiHK1.UseVisualStyleBackColor = true;
+            this.radioButtonCuoiHK1.Click += new System.EventHandler(this.radioButtonCuoiHK1_Click);
             // 
             // label11
             // 

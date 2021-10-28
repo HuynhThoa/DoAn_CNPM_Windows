@@ -46,5 +46,12 @@ namespace DoAn_Demo.Data
         /// <param name="expression">expression</param>
         /// <returns>true if exists else false</returns>
         bool FindBy(Expression<Func<T, bool>> expression);
+
+        /// <summary>
+        /// trả về danh sách đối tượng theo điều kiện truyền vào
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        IEnumerable<T> GetListBy(Expression<Func<T, bool>> expression);
     }
 }
