@@ -110,7 +110,8 @@ namespace DoAn_Demo.Repositories
         /// <returns></returns>
         public virtual IEnumerable<T> GetListBy(Expression<Func<T,bool>> expression)
         {
-            return dbComponent.Where(expression).AsEnumerable().ToList();
+            List<T> list = dbComponent.Where(expression).AsEnumerable().ToList();
+            return list;
         }
 
         /// <summary>

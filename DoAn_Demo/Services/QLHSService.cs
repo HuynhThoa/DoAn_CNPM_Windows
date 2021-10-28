@@ -111,10 +111,40 @@ namespace DoAn_Demo.Services
             return list;
         }
 
+        public HocSinh GetHocSinh(Expression<Func<HocSinh, bool>> expression)
+        {
+            HocSinh hocSinh = hocSinhRepository.GetBy(expression);
+            return hocSinh;
+        }
+
         public void AddCT_BangDiem(CTBangDiem ct)
         {
-            cTBangDiemRepository.Add(ct);
-            
+            cTBangDiemRepository.Add(ct);   
+        }
+
+        internal void Add_HS(HocSinh hs)
+        {
+            hocSinhRepository.Add(hs);
+        }
+
+        /// <summary>
+        /// sau khi gọi sẽ đưa học sinh vừa thêm vào danh sách học sinh vào trực tiếp lớp 
+        /// </summary>
+        internal void JoinLopHoc(LopHoc lop)
+        {
+            BangXepLoai bxl = GetBangXepLoaiNew();
+            HocSinh hocSinh = GetHocSinhNew();
+            DanhSachLop danhSachLop = new DanhSachLop() { IDBXL = bxl.IDBXL,
+                                                            IDLopHoc = lop.IDLopHoc, 
+                                                            IDHS = hocSinh.IDHS};
+
+            danhSachLopRepository.Add(danhSachLop);
+        }
+
+        public HocSinh GetHocSinhNew()
+        {
+            HocSinh hs =  hocSinhRepository.MaxID();
+            return hs;
         }
     }
 }
