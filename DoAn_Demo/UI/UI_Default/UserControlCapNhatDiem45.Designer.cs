@@ -50,6 +50,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.buttonCapNhatDiem = new System.Windows.Forms.Button();
             this.dataGridViewCapNhatDiem_45 = new System.Windows.Forms.DataGridView();
             this.buttonCapNhatDiem_45 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).BeginInit();
@@ -250,6 +251,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewCapNhatDiem_45.AllowUserToAddRows = false;
             this.dataGridViewCapNhatDiem_45.AllowUserToDeleteRows = false;
             this.dataGridViewCapNhatDiem_45.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCapNhatDiem_45.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridViewCapNhatDiem_45.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCapNhatDiem_45.Location = new System.Drawing.Point(460, 98);
             this.dataGridViewCapNhatDiem_45.Name = "dataGridViewCapNhatDiem_45";
@@ -262,18 +264,31 @@ namespace DoAn_Demo.UI.UI_Default
             // 
             // buttonCapNhatDiem_45
             // 
+            this.buttonCapNhatDiem_45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonCapNhatDiem_45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCapNhatDiem_45.Location = new System.Drawing.Point(19, 551);
             this.buttonCapNhatDiem_45.Name = "buttonCapNhatDiem_45";
             this.buttonCapNhatDiem_45.Size = new System.Drawing.Size(151, 39);
             this.buttonCapNhatDiem_45.TabIndex = 20;
             this.buttonCapNhatDiem_45.Text = "Cập Nhật Điểm";
-            this.buttonCapNhatDiem_45.UseVisualStyleBackColor = true;
+            this.buttonCapNhatDiem_45.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(560, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(420, 39);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Cập Nhật Điểm Học Sinh";
             // 
             // UserControlCapNhatDiem45
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonCapNhatDiem_45);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonCapNhatDiem);
@@ -286,6 +301,7 @@ namespace DoAn_Demo.UI.UI_Default
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem_45)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -312,5 +328,6 @@ namespace DoAn_Demo.UI.UI_Default
         private System.Windows.Forms.Label labelDiemLichSu;
         private System.Windows.Forms.TextBox textBoxDiemLichSu;
         private System.Windows.Forms.Button buttonCapNhatDiem_45;
+        private System.Windows.Forms.Label label5;
     }
 }

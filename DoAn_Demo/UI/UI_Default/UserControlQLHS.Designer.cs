@@ -117,6 +117,7 @@ namespace DoAn_Demo.UI
             // 
             // tabPageQLTTHocSinh
             // 
+            this.tabPageQLTTHocSinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPageQLTTHocSinh.Controls.Add(this.panelCapNhatThongTinHS);
             this.tabPageQLTTHocSinh.Controls.Add(this.label1);
             this.tabPageQLTTHocSinh.Controls.Add(this.textBoxSeach);
@@ -127,7 +128,6 @@ namespace DoAn_Demo.UI
             this.tabPageQLTTHocSinh.Size = new System.Drawing.Size(1514, 620);
             this.tabPageQLTTHocSinh.TabIndex = 0;
             this.tabPageQLTTHocSinh.Text = "Cập Nhật Thông Tin Học Sinh";
-            this.tabPageQLTTHocSinh.UseVisualStyleBackColor = true;
             // 
             // panelCapNhatThongTinHS
             // 
@@ -150,6 +150,7 @@ namespace DoAn_Demo.UI
             // 
             // tabPageSuaHocSinh
             // 
+            this.tabPageSuaHocSinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPageSuaHocSinh.Controls.Add(this.buttonUpdate);
             this.tabPageSuaHocSinh.Controls.Add(this.buttonKMFDLKSN);
             this.tabPageSuaHocSinh.Controls.Add(this.groupBox1);
@@ -159,16 +160,16 @@ namespace DoAn_Demo.UI
             this.tabPageSuaHocSinh.Size = new System.Drawing.Size(632, 573);
             this.tabPageSuaHocSinh.TabIndex = 0;
             this.tabPageSuaHocSinh.Text = "Sửa Thông Tin Học Sinh";
-            this.tabPageSuaHocSinh.UseVisualStyleBackColor = true;
             // 
             // buttonUpdate
             // 
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonUpdate.Location = new System.Drawing.Point(15, 520);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(120, 38);
             this.buttonUpdate.TabIndex = 23;
             this.buttonUpdate.Text = "Sửa";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             // 
             // buttonKMFDLKSN
             // 
@@ -374,6 +375,7 @@ namespace DoAn_Demo.UI
             // 
             // tabPageThemHocSinh
             // 
+            this.tabPageThemHocSinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPageThemHocSinh.Controls.Add(this.buttonInsert);
             this.tabPageThemHocSinh.Controls.Add(this.groupBox2);
             this.tabPageThemHocSinh.Location = new System.Drawing.Point(4, 25);
@@ -382,16 +384,16 @@ namespace DoAn_Demo.UI
             this.tabPageThemHocSinh.Size = new System.Drawing.Size(632, 573);
             this.tabPageThemHocSinh.TabIndex = 1;
             this.tabPageThemHocSinh.Text = "Thêm Học Sinh";
-            this.tabPageThemHocSinh.UseVisualStyleBackColor = true;
             // 
             // buttonInsert
             // 
+            this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonInsert.Location = new System.Drawing.Point(20, 520);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(100, 38);
             this.buttonInsert.TabIndex = 21;
             this.buttonInsert.Text = "Thêm";
-            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // groupBox2
@@ -548,6 +550,7 @@ namespace DoAn_Demo.UI
             // 
             // tabPageDeleteHS
             // 
+            this.tabPageDeleteHS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPageDeleteHS.Controls.Add(this.buttonDelete);
             this.tabPageDeleteHS.Controls.Add(this.textBoxIDXoaHS);
             this.tabPageDeleteHS.Controls.Add(this.label12);
@@ -557,16 +560,17 @@ namespace DoAn_Demo.UI
             this.tabPageDeleteHS.Size = new System.Drawing.Size(632, 573);
             this.tabPageDeleteHS.TabIndex = 2;
             this.tabPageDeleteHS.Text = "Xóa Thông Tin Học Sinh";
-            this.tabPageDeleteHS.UseVisualStyleBackColor = true;
             // 
             // buttonDelete
             // 
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonDelete.Location = new System.Drawing.Point(509, 129);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(86, 37);
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "Xóa";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // textBoxIDXoaHS
             // 
@@ -608,6 +612,7 @@ namespace DoAn_Demo.UI
             this.dataGridViewHocSinh.AllowUserToAddRows = false;
             this.dataGridViewHocSinh.AllowUserToDeleteRows = false;
             this.dataGridViewHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHocSinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridViewHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,

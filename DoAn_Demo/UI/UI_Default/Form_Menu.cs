@@ -68,5 +68,11 @@ namespace DoAn_Demo
         Action<string> ShowMessErr = s => MessageBox.Show(s,"Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
         Action<string> ShowMessInfor= s => MessageBox.Show(s, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        private void ToolStripMenuItemHome_Click(object sender, EventArgs e)
+        {
+            panelMenu.Controls.Clear();
+            Form_Menu_Load(sender, e);
+        }
     }
 }

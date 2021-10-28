@@ -143,6 +143,7 @@ namespace DoAn_Demo
             this.ToolStripMenuItemHome.Name = "ToolStripMenuItemHome";
             this.ToolStripMenuItemHome.Size = new System.Drawing.Size(64, 24);
             this.ToolStripMenuItemHome.Text = "Home";
+            this.ToolStripMenuItemHome.Click += new System.EventHandler(this.ToolStripMenuItemHome_Click);
             // 
             // ToolStripMenuItemHelp
             // 

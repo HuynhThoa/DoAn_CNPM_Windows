@@ -29,47 +29,48 @@ namespace DoAn_Demo.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButtonCuoiHK2 = new System.Windows.Forms.RadioButton();
-            this.radioButtonCuoiHK1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonCuoiHK2123 = new System.Windows.Forms.RadioButton();
+            this.radioButtonCuoiHK1123 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxIDCapNhatDiem = new System.Windows.Forms.TextBox();
+            this.textBoxDiemTiengAnh123 = new System.Windows.Forms.TextBox();
+            this.textBoxDiemTiengViet123 = new System.Windows.Forms.TextBox();
+            this.textBoxDiemToan123 = new System.Windows.Forms.TextBox();
+            this.textBoxIDCapNhatDiem123 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.dataGridViewCapNhatDiem = new System.Windows.Forms.DataGridView();
-            this.buttonCapNhatDiem = new System.Windows.Forms.Button();
+            this.dataGridViewCapNhatDiem123 = new System.Windows.Forms.DataGridView();
+            this.buttonCapNhatDiem123 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem123)).BeginInit();
             this.SuspendLayout();
             // 
-            // radioButtonCuoiHK2
+            // radioButtonCuoiHK2123
             // 
-            this.radioButtonCuoiHK2.AutoSize = true;
-            this.radioButtonCuoiHK2.Location = new System.Drawing.Point(305, 59);
-            this.radioButtonCuoiHK2.Name = "radioButtonCuoiHK2";
-            this.radioButtonCuoiHK2.Size = new System.Drawing.Size(110, 24);
-            this.radioButtonCuoiHK2.TabIndex = 4;
-            this.radioButtonCuoiHK2.TabStop = true;
-            this.radioButtonCuoiHK2.Text = "Cuối HK2";
-            this.radioButtonCuoiHK2.UseVisualStyleBackColor = true;
+            this.radioButtonCuoiHK2123.AutoSize = true;
+            this.radioButtonCuoiHK2123.Location = new System.Drawing.Point(305, 59);
+            this.radioButtonCuoiHK2123.Name = "radioButtonCuoiHK2123";
+            this.radioButtonCuoiHK2123.Size = new System.Drawing.Size(110, 24);
+            this.radioButtonCuoiHK2123.TabIndex = 4;
+            this.radioButtonCuoiHK2123.TabStop = true;
+            this.radioButtonCuoiHK2123.Text = "Cuối HK2";
+            this.radioButtonCuoiHK2123.UseVisualStyleBackColor = true;
             // 
-            // radioButtonCuoiHK1
+            // radioButtonCuoiHK1123
             // 
-            this.radioButtonCuoiHK1.AutoSize = true;
-            this.radioButtonCuoiHK1.Location = new System.Drawing.Point(146, 59);
-            this.radioButtonCuoiHK1.Name = "radioButtonCuoiHK1";
-            this.radioButtonCuoiHK1.Size = new System.Drawing.Size(110, 24);
-            this.radioButtonCuoiHK1.TabIndex = 4;
-            this.radioButtonCuoiHK1.TabStop = true;
-            this.radioButtonCuoiHK1.Text = "Cuối HK1";
-            this.radioButtonCuoiHK1.UseVisualStyleBackColor = true;
-            this.radioButtonCuoiHK1.Click += new System.EventHandler(this.radioButtonCuoiHK1_Click);
+            this.radioButtonCuoiHK1123.AutoSize = true;
+            this.radioButtonCuoiHK1123.Location = new System.Drawing.Point(146, 59);
+            this.radioButtonCuoiHK1123.Name = "radioButtonCuoiHK1123";
+            this.radioButtonCuoiHK1123.Size = new System.Drawing.Size(110, 24);
+            this.radioButtonCuoiHK1123.TabIndex = 4;
+            this.radioButtonCuoiHK1123.TabStop = true;
+            this.radioButtonCuoiHK1123.Text = "Cuối HK1";
+            this.radioButtonCuoiHK1123.UseVisualStyleBackColor = true;
+            this.radioButtonCuoiHK1123.Click += new System.EventHandler(this.radioButtonCuoiHK1_Click);
             // 
             // label11
             // 
@@ -82,12 +83,12 @@ namespace DoAn_Demo.UI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButtonCuoiHK2);
-            this.groupBox2.Controls.Add(this.radioButtonCuoiHK1);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBoxIDCapNhatDiem);
+            this.groupBox2.Controls.Add(this.radioButtonCuoiHK2123);
+            this.groupBox2.Controls.Add(this.radioButtonCuoiHK1123);
+            this.groupBox2.Controls.Add(this.textBoxDiemTiengAnh123);
+            this.groupBox2.Controls.Add(this.textBoxDiemTiengViet123);
+            this.groupBox2.Controls.Add(this.textBoxDiemToan123);
+            this.groupBox2.Controls.Add(this.textBoxIDCapNhatDiem123);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label2);
@@ -102,33 +103,33 @@ namespace DoAn_Demo.UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Học Sinh";
             // 
-            // textBox3
+            // textBoxDiemTiengAnh123
             // 
-            this.textBox3.Location = new System.Drawing.Point(231, 309);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 26);
-            this.textBox3.TabIndex = 3;
+            this.textBoxDiemTiengAnh123.Location = new System.Drawing.Point(231, 309);
+            this.textBoxDiemTiengAnh123.Name = "textBoxDiemTiengAnh123";
+            this.textBoxDiemTiengAnh123.Size = new System.Drawing.Size(79, 26);
+            this.textBoxDiemTiengAnh123.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxDiemTiengViet123
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 265);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 26);
-            this.textBox2.TabIndex = 3;
+            this.textBoxDiemTiengViet123.Location = new System.Drawing.Point(231, 265);
+            this.textBoxDiemTiengViet123.Name = "textBoxDiemTiengViet123";
+            this.textBoxDiemTiengViet123.Size = new System.Drawing.Size(79, 26);
+            this.textBoxDiemTiengViet123.TabIndex = 3;
             // 
-            // textBox1
+            // textBoxDiemToan123
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxDiemToan123.Location = new System.Drawing.Point(231, 220);
+            this.textBoxDiemToan123.Name = "textBoxDiemToan123";
+            this.textBoxDiemToan123.Size = new System.Drawing.Size(79, 26);
+            this.textBoxDiemToan123.TabIndex = 3;
             // 
-            // textBoxIDCapNhatDiem
+            // textBoxIDCapNhatDiem123
             // 
-            this.textBoxIDCapNhatDiem.Location = new System.Drawing.Point(146, 113);
-            this.textBoxIDCapNhatDiem.Name = "textBoxIDCapNhatDiem";
-            this.textBoxIDCapNhatDiem.Size = new System.Drawing.Size(269, 26);
-            this.textBoxIDCapNhatDiem.TabIndex = 3;
+            this.textBoxIDCapNhatDiem123.Location = new System.Drawing.Point(146, 113);
+            this.textBoxIDCapNhatDiem123.Name = "textBoxIDCapNhatDiem123";
+            this.textBoxIDCapNhatDiem123.Size = new System.Drawing.Size(269, 26);
+            this.textBoxIDCapNhatDiem123.TabIndex = 3;
             // 
             // label3
             // 
@@ -175,63 +176,79 @@ namespace DoAn_Demo.UI
             this.label19.TabIndex = 0;
             this.label19.Text = "ID Học Sinh";
             // 
-            // dataGridViewCapNhatDiem
+            // dataGridViewCapNhatDiem123
             // 
-            this.dataGridViewCapNhatDiem.AllowUserToAddRows = false;
-            this.dataGridViewCapNhatDiem.AllowUserToDeleteRows = false;
-            this.dataGridViewCapNhatDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCapNhatDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCapNhatDiem.Location = new System.Drawing.Point(474, 111);
-            this.dataGridViewCapNhatDiem.Name = "dataGridViewCapNhatDiem";
-            this.dataGridViewCapNhatDiem.ReadOnly = true;
-            this.dataGridViewCapNhatDiem.RowHeadersWidth = 51;
-            this.dataGridViewCapNhatDiem.RowTemplate.Height = 24;
-            this.dataGridViewCapNhatDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCapNhatDiem.Size = new System.Drawing.Size(994, 394);
-            this.dataGridViewCapNhatDiem.TabIndex = 14;
+            this.dataGridViewCapNhatDiem123.AllowUserToAddRows = false;
+            this.dataGridViewCapNhatDiem123.AllowUserToDeleteRows = false;
+            this.dataGridViewCapNhatDiem123.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCapNhatDiem123.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewCapNhatDiem123.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCapNhatDiem123.Location = new System.Drawing.Point(474, 123);
+            this.dataGridViewCapNhatDiem123.Name = "dataGridViewCapNhatDiem123";
+            this.dataGridViewCapNhatDiem123.ReadOnly = true;
+            this.dataGridViewCapNhatDiem123.RowHeadersWidth = 51;
+            this.dataGridViewCapNhatDiem123.RowTemplate.Height = 24;
+            this.dataGridViewCapNhatDiem123.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCapNhatDiem123.Size = new System.Drawing.Size(994, 382);
+            this.dataGridViewCapNhatDiem123.TabIndex = 14;
             // 
-            // buttonCapNhatDiem
+            // buttonCapNhatDiem123
             // 
-            this.buttonCapNhatDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCapNhatDiem.Location = new System.Drawing.Point(33, 530);
-            this.buttonCapNhatDiem.Name = "buttonCapNhatDiem";
-            this.buttonCapNhatDiem.Size = new System.Drawing.Size(151, 34);
-            this.buttonCapNhatDiem.TabIndex = 16;
-            this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
-            this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
+            this.buttonCapNhatDiem123.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonCapNhatDiem123.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCapNhatDiem123.Location = new System.Drawing.Point(33, 530);
+            this.buttonCapNhatDiem123.Name = "buttonCapNhatDiem123";
+            this.buttonCapNhatDiem123.Size = new System.Drawing.Size(151, 34);
+            this.buttonCapNhatDiem123.TabIndex = 16;
+            this.buttonCapNhatDiem123.Text = "Cập Nhật Điểm";
+            this.buttonCapNhatDiem123.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(441, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(420, 39);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Cập Nhật Điểm Học Sinh";
             // 
             // UserControlCapNhatDiem123
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonCapNhatDiem);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonCapNhatDiem123);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridViewCapNhatDiem);
+            this.Controls.Add(this.dataGridViewCapNhatDiem123);
             this.Name = "UserControlCapNhatDiem123";
             this.Size = new System.Drawing.Size(1501, 616);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem123)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButtonCuoiHK2;
-        private System.Windows.Forms.RadioButton radioButtonCuoiHK1;
+        private System.Windows.Forms.RadioButton radioButtonCuoiHK2123;
+        private System.Windows.Forms.RadioButton radioButtonCuoiHK1123;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxIDCapNhatDiem;
+        private System.Windows.Forms.TextBox textBoxIDCapNhatDiem123;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DataGridView dataGridViewCapNhatDiem;
-        private System.Windows.Forms.Button buttonCapNhatDiem;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridViewCapNhatDiem123;
+        private System.Windows.Forms.Button buttonCapNhatDiem123;
+        private System.Windows.Forms.TextBox textBoxDiemTiengAnh123;
+        private System.Windows.Forms.TextBox textBoxDiemTiengViet123;
+        private System.Windows.Forms.TextBox textBoxDiemToan123;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

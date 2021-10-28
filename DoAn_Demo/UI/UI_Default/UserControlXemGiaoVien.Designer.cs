@@ -30,15 +30,15 @@ namespace DoAn_Demo.UI.UI_Default
         private void InitializeComponent()
         {
             this.dataGridViewXemGiaoVien = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSapXep = new System.Windows.Forms.Button();
-            this.textBoxSeachGV = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxSeachGV = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXemGiaoVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +47,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewXemGiaoVien.AllowUserToAddRows = false;
             this.dataGridViewXemGiaoVien.AllowUserToDeleteRows = false;
             this.dataGridViewXemGiaoVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewXemGiaoVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridViewXemGiaoVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewXemGiaoVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -62,32 +63,6 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewXemGiaoVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewXemGiaoVien.Size = new System.Drawing.Size(1268, 455);
             this.dataGridViewXemGiaoVien.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(975, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tìm Kiếm";
-            // 
-            // buttonSapXep
-            // 
-            this.buttonSapXep.Location = new System.Drawing.Point(121, 113);
-            this.buttonSapXep.Name = "buttonSapXep";
-            this.buttonSapXep.Size = new System.Drawing.Size(100, 29);
-            this.buttonSapXep.TabIndex = 2;
-            this.buttonSapXep.Text = "Sắp Xếp";
-            this.buttonSapXep.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSeachGV
-            // 
-            this.textBoxSeachGV.Location = new System.Drawing.Point(1047, 113);
-            this.textBoxSeachGV.Name = "textBoxSeachGV";
-            this.textBoxSeachGV.Size = new System.Drawing.Size(212, 22);
-            this.textBoxSeachGV.TabIndex = 3;
-            this.textBoxSeachGV.TextChanged += new System.EventHandler(this.textBoxSeachGV_TextChanged);
             // 
             // Column1
             // 
@@ -125,12 +100,40 @@ namespace DoAn_Demo.UI.UI_Default
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(975, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tìm Kiếm";
+            // 
+            // textBoxSeachGV
+            // 
+            this.textBoxSeachGV.Location = new System.Drawing.Point(1047, 113);
+            this.textBoxSeachGV.Name = "textBoxSeachGV";
+            this.textBoxSeachGV.Size = new System.Drawing.Size(212, 22);
+            this.textBoxSeachGV.TabIndex = 3;
+            this.textBoxSeachGV.TextChanged += new System.EventHandler(this.textBoxSeachGV_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(599, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(452, 39);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Xem Thông Tin Giảng Viên";
+            // 
             // UserControlXemGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxSeachGV);
-            this.Controls.Add(this.buttonSapXep);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewXemGiaoVien);
             this.Name = "UserControlXemGiaoVien";
@@ -146,7 +149,6 @@ namespace DoAn_Demo.UI.UI_Default
 
         private System.Windows.Forms.DataGridView dataGridViewXemGiaoVien;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonSapXep;
         private System.Windows.Forms.TextBox textBoxSeachGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -154,5 +156,6 @@ namespace DoAn_Demo.UI.UI_Default
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label2;
     }
 }

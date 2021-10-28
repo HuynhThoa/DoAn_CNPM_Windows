@@ -242,5 +242,10 @@ namespace DoAn_Demo.UI
             BangXepLoai bangXepLoai = new BangXepLoai() { XepLoai = null, HanhKiem = null, NienKhoa = nienKhoa };
             service.CreateBangXepLoai(bangXepLoai);
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
