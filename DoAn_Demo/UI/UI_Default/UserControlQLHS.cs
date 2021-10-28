@@ -51,7 +51,7 @@ namespace DoAn_Demo.UI
 
         private void UserControlQLHS_Load(object sender, EventArgs e)
         {
-            
+            radioButtonNamThemHS.Checked = true;
         }
 
         private void dataGridViewHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
