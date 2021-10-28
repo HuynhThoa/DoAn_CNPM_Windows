@@ -392,6 +392,7 @@ namespace DoAn_Demo.UI
             this.buttonInsert.TabIndex = 21;
             this.buttonInsert.Text = "Thêm";
             this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // groupBox2
             // 
@@ -600,6 +601,7 @@ namespace DoAn_Demo.UI
             this.textBoxSeach.Name = "textBoxSeach";
             this.textBoxSeach.Size = new System.Drawing.Size(318, 26);
             this.textBoxSeach.TabIndex = 17;
+            this.textBoxSeach.TextChanged += new System.EventHandler(this.textBoxSeach_TextChanged);
             // 
             // dataGridViewHocSinh
             // 

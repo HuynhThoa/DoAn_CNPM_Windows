@@ -112,5 +112,20 @@ namespace DoAn_Demo.Repositories
         {
             return dbComponent.Where(expression).AsEnumerable().ToList();
         }
+
+        /// <summary>
+        /// them doi tuong moi vao database
+        /// </summary>
+        /// <param name="t"></param>
+        public virtual void Add(T t)
+        {
+            dbComponent.Add(t);
+        }
+
+        public virtual T MaxID()
+        {
+            T t = null;
+            return t;
+        }
     }
 }

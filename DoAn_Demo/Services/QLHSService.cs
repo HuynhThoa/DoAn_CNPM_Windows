@@ -88,5 +88,33 @@ namespace DoAn_Demo.Services
         {
             return danhSachLopRepository.GetListBy(expression).ToList();
         }
+
+        /// <summary>
+        /// tạo bảng xếp loại và lưu
+        /// </summary>
+        /// <param name="bangXepLoai"></param>
+        public void CreateBangXepLoai(BangXepLoai bangXepLoai)
+        {
+            bangXepLoaiRepository.Add(bangXepLoai);
+            
+        }
+
+        public BangXepLoai GetBangXepLoaiNew()
+        {
+            BangXepLoai bangXepLoai = bangXepLoaiRepository.MaxID();
+            return bangXepLoai;
+        }
+
+        public List<MonHoc> GetDanhSachMonHocBy(Expression<Func<MonHoc, bool>> expression)
+        {
+            List<MonHoc> list = (List<MonHoc>)monHocRepository.GetListBy(expression);
+            return list;
+        }
+
+        public void AddCT_BangDiem(CTBangDiem ct)
+        {
+            cTBangDiemRepository.Add(ct);
+            
+        }
     }
 }

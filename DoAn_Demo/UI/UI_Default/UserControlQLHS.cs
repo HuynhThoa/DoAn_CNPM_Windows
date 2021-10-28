@@ -38,8 +38,6 @@ namespace DoAn_Demo.UI
             
         }
 
-       
-
         private void FillData(List<DanhSachLop> danhSaches)
         {
             dataGridViewHocSinh.Rows.Clear();
@@ -125,8 +123,6 @@ namespace DoAn_Demo.UI
             return new DateTime(yyyy, mm, dd, hh, 00, 0);
         }
 
-        
-
         private void checkBoxThoiHoc_Click(object sender, EventArgs e)
         {
             if (checkBoxThoiHoc.Checked)
@@ -158,6 +154,93 @@ namespace DoAn_Demo.UI
                     panelCapNhatDiem.Controls.Add(new UserControlCapNhatDiem45(danhSachHocSinh));
                 }
             }
+        }
+
+        private void textBoxSeach_TextChanged(object sender, EventArgs e)
+        {
+            string txtTimKiem = textBoxSeach.Text.Trim();
+            if (txtTimKiem.Length > 0)
+            {
+                List<DanhSachLop> list = danhSachHocSinh.Where( hs => hs.HocSinh.TenHS.Contains(txtTimKiem) || 
+                                                                hs.HocSinh.TenPH.Contains(txtTimKiem) || 
+                                                                hs.HocSinh.SDT.Contains(txtTimKiem)).ToList();
+                FillData(list);
+            }
+            else
+            {
+                FillData(danhSachHocSinh);
+            }
+        }
+
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Create_bangXepLoai();
+                Create_CTBangDiem();
+
+                HocSinh hs = new HocSinh();
+            }
+            catch (Exception ex)
+            {
+                ShowErr(ex.Message,"Exception");
+            }
+
+        }
+        public bool Check_HoTen(string hoTen)
+        {
+            foreach (char c in hoTen)
+            {
+                if(c>= '0' && c <= '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        Action<string, string> ShowErr = (s1, s2) => MessageBox.Show(s1, s2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        private void Create_CTBangDiem()
+        {
+            BangXepLoai bangXepLoai = service.GetBangXepLoaiNew();
+            List<MonHoc> monHocs = GetListMonHoc();
+            CTBangDiem ct;
+            foreach (MonHoc mon in monHocs)
+            {
+                ct = new CTBangDiem() { IDBXL = bangXepLoai.IDBXL, IDMH = mon.IDMH};
+                service.AddCT_BangDiem(ct);
+            }
+        }
+        public List<MonHoc> GetListMonHoc()
+        {
+            List<MonHoc> monHocs;
+            switch (lop.IDLoaiLop)
+            {
+                case 1:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('1'));
+                    break;
+                case 2:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('2'));
+                    break;
+                case 3:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('3'));
+                    break;
+                case 4:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('4'));
+                    break;
+                default:
+                    monHocs = service.GetDanhSachMonHocBy(m => m.TenMH.Contains('5'));
+                    break;
+            }
+            return monHocs;
+        }
+
+
+        private void Create_bangXepLoai()
+        {
+            int nienKhoa = int.Parse(DateTime.Now.Year.ToString().Substring(2));
+            BangXepLoai bangXepLoai = new BangXepLoai() { XepLoai = null, HanhKiem = null, NienKhoa = nienKhoa };
+            service.CreateBangXepLoai(bangXepLoai);
         }
     }
 }

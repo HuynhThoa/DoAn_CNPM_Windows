@@ -53,5 +53,15 @@ namespace DoAn_Demo.Data
         /// <param name="expression"></param>
         /// <returns></returns>
         IEnumerable<T> GetListBy(Expression<Func<T, bool>> expression);
+
+        /// <summary>
+        /// them doi tuog moi vao co so du lieu
+        /// </summary>
+        /// <param name="t"></param>
+        void Add(T t);
+
+        T MaxID();
+        
+        
     }
 }
