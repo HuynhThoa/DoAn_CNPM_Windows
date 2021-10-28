@@ -33,6 +33,12 @@ namespace DoAn_Demo.UI.UI_Default
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSapXep = new System.Windows.Forms.Button();
             this.textBoxSeachGV = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXemGiaoVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +48,13 @@ namespace DoAn_Demo.UI.UI_Default
             this.dataGridViewXemGiaoVien.AllowUserToDeleteRows = false;
             this.dataGridViewXemGiaoVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewXemGiaoVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewXemGiaoVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dataGridViewXemGiaoVien.Location = new System.Drawing.Point(121, 161);
             this.dataGridViewXemGiaoVien.Name = "dataGridViewXemGiaoVien";
             this.dataGridViewXemGiaoVien.RowHeadersWidth = 51;
@@ -74,6 +87,43 @@ namespace DoAn_Demo.UI.UI_Default
             this.textBoxSeachGV.Name = "textBoxSeachGV";
             this.textBoxSeachGV.Size = new System.Drawing.Size(212, 22);
             this.textBoxSeachGV.TabIndex = 3;
+            this.textBoxSeachGV.TextChanged += new System.EventHandler(this.textBoxSeachGV_TextChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID Giáo Viên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Họ Tên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Số Điện Thoại";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Địa Chỉ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Email";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "GIới Tính";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
             // 
             // UserControlXemGiaoVien
             // 
@@ -85,6 +135,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.Controls.Add(this.dataGridViewXemGiaoVien);
             this.Name = "UserControlXemGiaoVien";
             this.Size = new System.Drawing.Size(1522, 649);
+            this.Load += new System.EventHandler(this.UserControlXemGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXemGiaoVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,5 +148,11 @@ namespace DoAn_Demo.UI.UI_Default
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSapXep;
         private System.Windows.Forms.TextBox textBoxSeachGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

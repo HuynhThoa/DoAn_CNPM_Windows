@@ -1,9 +1,11 @@
-﻿using DoAn_Demo.Data;
+﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
+using DoAn_Demo.Data;
 using DoAn_Demo.Entities;
 using DoAn_Demo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +48,45 @@ namespace DoAn_Demo.Services
             unitOfWork.Save();
         }
 
+        /// <summary>
+        /// lấy giáo viên theo biểu thức truyền vào
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        public GiaoVien GetGiaoVien(Expression<Func<GiaoVien,bool>> expression)
+        {
+            GiaoVien giaoVien = giaoVienRepository.GetBy(expression);
+            return giaoVien;
+        }
 
+        /// <summary>
+        /// lấy danh sách giáo viên
+        /// </summary>
+        /// <returns></returns>
+        public List<GiaoVien> GetListGiaoVien()
+        {
+            return giaoVienRepository.GetAll().ToList();
+        }
+
+        /// <summary>
+        /// Lấy lớp học theo biểu thức truyền vào 
+        /// </summary>
+        /// <param name="expression">biểu thức</param>
+        /// <returns></returns>
+        public LopHoc GetLopHocBy(Expression<Func<LopHoc,bool>> expression)
+        {
+            LopHoc lopHoc = lopHocRepository.GetBy(expression);
+            return lopHoc;
+        }
+        
+        public List<HocSinh> GetListHocSinhBy(Expression<Func<HocSinh,bool>> expression)
+        {
+            return hocSinhRepository.GetListBy(expression).ToList();
+        }
+
+        public List<DanhSachLop> GetDanhSachLop(Expression<Func<DanhSachLop, bool>> expression)
+        {
+            return danhSachLopRepository.GetListBy(expression).ToList();
+        }
     }
 }

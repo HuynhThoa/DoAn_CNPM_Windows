@@ -280,6 +280,7 @@ namespace DoAn_Demo.UI.UI_Default
             this.Controls.Add(this.dataGridViewCapNhatDiem_45);
             this.Name = "UserControlCapNhatDiem45";
             this.Size = new System.Drawing.Size(1501, 616);
+            this.Load += new System.EventHandler(this.UserControlCapNhatDiem45_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

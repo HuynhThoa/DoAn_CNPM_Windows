@@ -102,6 +102,7 @@ namespace DoAn_Demo
             this.textBoxPass.PasswordChar = '*';
             this.textBoxPass.Size = new System.Drawing.Size(301, 36);
             this.textBoxPass.TabIndex = 2;
+            this.textBoxPass.TextChanged += new System.EventHandler(this.textBoxPass_TextChanged);
             // 
             // textBoxSDT
             // 
@@ -110,6 +111,7 @@ namespace DoAn_Demo
             this.textBoxSDT.Name = "textBoxSDT";
             this.textBoxSDT.Size = new System.Drawing.Size(301, 36);
             this.textBoxSDT.TabIndex = 2;
+            this.textBoxSDT.TextChanged += new System.EventHandler(this.textBoxSDT_TextChanged);
             // 
             // Form_Login
             // 

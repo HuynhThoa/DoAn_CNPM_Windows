@@ -30,17 +30,14 @@ namespace DoAn_Demo.UI
         private void InitializeComponent()
         {
             this.tabControlCNTTHocSinh = new System.Windows.Forms.TabControl();
-            this.tabPageCapNhatDiem = new System.Windows.Forms.TabPage();
-            this.panelCapNhatDiem = new System.Windows.Forms.Panel();
             this.tabPageQLTTHocSinh = new System.Windows.Forms.TabPage();
             this.panelCapNhatThongTinHS = new System.Windows.Forms.Panel();
             this.tabControlChucNang = new System.Windows.Forms.TabControl();
             this.tabPageSuaHocSinh = new System.Windows.Forms.TabPage();
-            this.tabPageThemHocSinh = new System.Windows.Forms.TabPage();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonKMFDLKSN = new System.Windows.Forms.Button();
-            this.textBoxSeach = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxThoiHoc = new System.Windows.Forms.CheckBox();
             this.radioButtonNu = new System.Windows.Forms.RadioButton();
             this.radioButtonNam = new System.Windows.Forms.RadioButton();
             this.textBoxSDT = new System.Windows.Forms.TextBox();
@@ -52,7 +49,6 @@ namespace DoAn_Demo.UI
             this.dateTimePickerNTNS = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerNNH = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,7 +56,8 @@ namespace DoAn_Demo.UI
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewHocSinh = new System.Windows.Forms.DataGridView();
+            this.tabPageThemHocSinh = new System.Windows.Forms.TabPage();
+            this.buttonInsert = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonNuThemHS = new System.Windows.Forms.RadioButton();
             this.radioButtonNamThemHS = new System.Windows.Forms.RadioButton();
@@ -77,23 +74,34 @@ namespace DoAn_Demo.UI
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonInsert = new System.Windows.Forms.Button();
             this.tabPageDeleteHS = new System.Windows.Forms.TabPage();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.textBoxIDXoaHS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.buttonDelete = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxSeach = new System.Windows.Forms.TextBox();
+            this.dataGridViewHocSinh = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPageCapNhatDiem = new System.Windows.Forms.TabPage();
+            this.panelCapNhatDiem = new System.Windows.Forms.Panel();
             this.tabControlCNTTHocSinh.SuspendLayout();
-            this.tabPageCapNhatDiem.SuspendLayout();
             this.tabPageQLTTHocSinh.SuspendLayout();
             this.panelCapNhatThongTinHS.SuspendLayout();
             this.tabControlChucNang.SuspendLayout();
             this.tabPageSuaHocSinh.SuspendLayout();
-            this.tabPageThemHocSinh.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).BeginInit();
+            this.tabPageThemHocSinh.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPageDeleteHS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).BeginInit();
+            this.tabPageCapNhatDiem.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlCNTTHocSinh
@@ -105,25 +113,7 @@ namespace DoAn_Demo.UI
             this.tabControlCNTTHocSinh.SelectedIndex = 0;
             this.tabControlCNTTHocSinh.Size = new System.Drawing.Size(1522, 649);
             this.tabControlCNTTHocSinh.TabIndex = 0;
-            // 
-            // tabPageCapNhatDiem
-            // 
-            this.tabPageCapNhatDiem.Controls.Add(this.panelCapNhatDiem);
-            this.tabPageCapNhatDiem.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCapNhatDiem.Name = "tabPageCapNhatDiem";
-            this.tabPageCapNhatDiem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCapNhatDiem.Size = new System.Drawing.Size(1514, 620);
-            this.tabPageCapNhatDiem.TabIndex = 1;
-            this.tabPageCapNhatDiem.Text = "Cập Nhật Điểm";
-            this.tabPageCapNhatDiem.UseVisualStyleBackColor = true;
-            // 
-            // panelCapNhatDiem
-            // 
-            this.panelCapNhatDiem.Location = new System.Drawing.Point(3, 3);
-            this.panelCapNhatDiem.Name = "panelCapNhatDiem";
-            this.panelCapNhatDiem.Size = new System.Drawing.Size(1501, 616);
-            this.panelCapNhatDiem.TabIndex = 0;
-            this.panelCapNhatDiem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCapNhatDiem_Paint);
+            this.tabControlCNTTHocSinh.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlCNTTHocSinh_Selected);
             // 
             // tabPageQLTTHocSinh
             // 
@@ -171,17 +161,14 @@ namespace DoAn_Demo.UI
             this.tabPageSuaHocSinh.Text = "Sửa Thông Tin Học Sinh";
             this.tabPageSuaHocSinh.UseVisualStyleBackColor = true;
             // 
-            // tabPageThemHocSinh
+            // buttonUpdate
             // 
-            this.tabPageThemHocSinh.Controls.Add(this.buttonInsert);
-            this.tabPageThemHocSinh.Controls.Add(this.groupBox2);
-            this.tabPageThemHocSinh.Location = new System.Drawing.Point(4, 25);
-            this.tabPageThemHocSinh.Name = "tabPageThemHocSinh";
-            this.tabPageThemHocSinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageThemHocSinh.Size = new System.Drawing.Size(632, 573);
-            this.tabPageThemHocSinh.TabIndex = 1;
-            this.tabPageThemHocSinh.Text = "Thêm Học Sinh";
-            this.tabPageThemHocSinh.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Location = new System.Drawing.Point(15, 520);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(120, 38);
+            this.buttonUpdate.TabIndex = 23;
+            this.buttonUpdate.Text = "Sửa";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
             // 
             // buttonKMFDLKSN
             // 
@@ -194,26 +181,9 @@ namespace DoAn_Demo.UI
             this.buttonKMFDLKSN.UseVisualStyleBackColor = true;
             this.buttonKMFDLKSN.Visible = false;
             // 
-            // textBoxSeach
-            // 
-            this.textBoxSeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSeach.Location = new System.Drawing.Point(1147, 20);
-            this.textBoxSeach.Name = "textBoxSeach";
-            this.textBoxSeach.Size = new System.Drawing.Size(318, 26);
-            this.textBoxSeach.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1049, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Tìm Kiếm";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxThoiHoc);
             this.groupBox1.Controls.Add(this.radioButtonNu);
             this.groupBox1.Controls.Add(this.radioButtonNam);
             this.groupBox1.Controls.Add(this.textBoxSDT);
@@ -225,7 +195,6 @@ namespace DoAn_Demo.UI
             this.groupBox1.Controls.Add(this.dateTimePickerNTNS);
             this.groupBox1.Controls.Add(this.dateTimePickerNNH);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -240,6 +209,17 @@ namespace DoAn_Demo.UI
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Học Sinh";
+            // 
+            // checkBoxThoiHoc
+            // 
+            this.checkBoxThoiHoc.AutoSize = true;
+            this.checkBoxThoiHoc.Location = new System.Drawing.Point(22, 456);
+            this.checkBoxThoiHoc.Name = "checkBoxThoiHoc";
+            this.checkBoxThoiHoc.Size = new System.Drawing.Size(107, 24);
+            this.checkBoxThoiHoc.TabIndex = 5;
+            this.checkBoxThoiHoc.Text = "Thôi Học";
+            this.checkBoxThoiHoc.UseVisualStyleBackColor = true;
+            this.checkBoxThoiHoc.Click += new System.EventHandler(this.checkBoxThoiHoc_Click);
             // 
             // radioButtonNu
             // 
@@ -304,6 +284,7 @@ namespace DoAn_Demo.UI
             this.dateTimePickerNTH.Name = "dateTimePickerNTH";
             this.dateTimePickerNTH.Size = new System.Drawing.Size(335, 26);
             this.dateTimePickerNTH.TabIndex = 2;
+            this.dateTimePickerNTH.Visible = false;
             // 
             // dateTimePickerNTNS
             // 
@@ -327,15 +308,6 @@ namespace DoAn_Demo.UI
             this.label9.Size = new System.Drawing.Size(85, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Gioi Tính";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 458);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Ngày Thôi Học";
             // 
             // label7
             // 
@@ -400,20 +372,26 @@ namespace DoAn_Demo.UI
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ Và Tên";
             // 
-            // dataGridViewHocSinh
+            // tabPageThemHocSinh
             // 
-            this.dataGridViewHocSinh.AllowUserToAddRows = false;
-            this.dataGridViewHocSinh.AllowUserToDeleteRows = false;
-            this.dataGridViewHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHocSinh.Location = new System.Drawing.Point(649, 52);
-            this.dataGridViewHocSinh.Name = "dataGridViewHocSinh";
-            this.dataGridViewHocSinh.ReadOnly = true;
-            this.dataGridViewHocSinh.RowHeadersWidth = 51;
-            this.dataGridViewHocSinh.RowTemplate.Height = 24;
-            this.dataGridViewHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHocSinh.Size = new System.Drawing.Size(816, 488);
-            this.dataGridViewHocSinh.TabIndex = 19;
+            this.tabPageThemHocSinh.Controls.Add(this.buttonInsert);
+            this.tabPageThemHocSinh.Controls.Add(this.groupBox2);
+            this.tabPageThemHocSinh.Location = new System.Drawing.Point(4, 25);
+            this.tabPageThemHocSinh.Name = "tabPageThemHocSinh";
+            this.tabPageThemHocSinh.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageThemHocSinh.Size = new System.Drawing.Size(632, 573);
+            this.tabPageThemHocSinh.TabIndex = 1;
+            this.tabPageThemHocSinh.Text = "Thêm Học Sinh";
+            this.tabPageThemHocSinh.UseVisualStyleBackColor = true;
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(20, 520);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(100, 38);
+            this.buttonInsert.TabIndex = 21;
+            this.buttonInsert.Text = "Thêm";
+            this.buttonInsert.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -567,24 +545,6 @@ namespace DoAn_Demo.UI
             this.label19.TabIndex = 0;
             this.label19.Text = "Họ Và Tên";
             // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(15, 520);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(120, 38);
-            this.buttonUpdate.TabIndex = 23;
-            this.buttonUpdate.Text = "Sửa";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            // 
-            // buttonInsert
-            // 
-            this.buttonInsert.Location = new System.Drawing.Point(20, 520);
-            this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(100, 38);
-            this.buttonInsert.TabIndex = 21;
-            this.buttonInsert.Text = "Thêm";
-            this.buttonInsert.UseVisualStyleBackColor = true;
-            // 
             // tabPageDeleteHS
             // 
             this.tabPageDeleteHS.Controls.Add(this.buttonDelete);
@@ -597,6 +557,15 @@ namespace DoAn_Demo.UI
             this.tabPageDeleteHS.TabIndex = 2;
             this.tabPageDeleteHS.Text = "Xóa Thông Tin Học Sinh";
             this.tabPageDeleteHS.UseVisualStyleBackColor = true;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(509, 129);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(86, 37);
+            this.buttonDelete.TabIndex = 6;
+            this.buttonDelete.Text = "Xóa";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // textBoxIDXoaHS
             // 
@@ -614,14 +583,123 @@ namespace DoAn_Demo.UI
             this.label12.TabIndex = 4;
             this.label12.Text = "ID Học Sinh Cần Xóa";
             // 
-            // buttonDelete
+            // label1
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(509, 129);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(86, 37);
-            this.buttonDelete.TabIndex = 6;
-            this.buttonDelete.Text = "Xóa";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1049, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Tìm Kiếm";
+            // 
+            // textBoxSeach
+            // 
+            this.textBoxSeach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSeach.Location = new System.Drawing.Point(1147, 20);
+            this.textBoxSeach.Name = "textBoxSeach";
+            this.textBoxSeach.Size = new System.Drawing.Size(318, 26);
+            this.textBoxSeach.TabIndex = 17;
+            // 
+            // dataGridViewHocSinh
+            // 
+            this.dataGridViewHocSinh.AllowUserToAddRows = false;
+            this.dataGridViewHocSinh.AllowUserToDeleteRows = false;
+            this.dataGridViewHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dataGridViewHocSinh.Location = new System.Drawing.Point(649, 52);
+            this.dataGridViewHocSinh.Name = "dataGridViewHocSinh";
+            this.dataGridViewHocSinh.ReadOnly = true;
+            this.dataGridViewHocSinh.RowHeadersWidth = 51;
+            this.dataGridViewHocSinh.RowTemplate.Height = 24;
+            this.dataGridViewHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHocSinh.Size = new System.Drawing.Size(816, 488);
+            this.dataGridViewHocSinh.TabIndex = 19;
+            this.dataGridViewHocSinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocSinh_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "IDHS";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Học Sinh";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tên Phụ Huynh";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Sinh nhật";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Giới Tính";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Địa chỉ";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Số điện thoại";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Ngày nhập học";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // tabPageCapNhatDiem
+            // 
+            this.tabPageCapNhatDiem.Controls.Add(this.panelCapNhatDiem);
+            this.tabPageCapNhatDiem.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCapNhatDiem.Name = "tabPageCapNhatDiem";
+            this.tabPageCapNhatDiem.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCapNhatDiem.Size = new System.Drawing.Size(1514, 620);
+            this.tabPageCapNhatDiem.TabIndex = 1;
+            this.tabPageCapNhatDiem.Text = "Cập Nhật Điểm";
+            this.tabPageCapNhatDiem.UseVisualStyleBackColor = true;
+            this.tabPageCapNhatDiem.Click += new System.EventHandler(this.tabPageCapNhatDiem_Click);
+            // 
+            // panelCapNhatDiem
+            // 
+            this.panelCapNhatDiem.Location = new System.Drawing.Point(3, 3);
+            this.panelCapNhatDiem.Name = "panelCapNhatDiem";
+            this.panelCapNhatDiem.Size = new System.Drawing.Size(1501, 616);
+            this.panelCapNhatDiem.TabIndex = 0;
             // 
             // UserControlQLHS
             // 
@@ -630,21 +708,22 @@ namespace DoAn_Demo.UI
             this.Controls.Add(this.tabControlCNTTHocSinh);
             this.Name = "UserControlQLHS";
             this.Size = new System.Drawing.Size(1522, 649);
+            this.Load += new System.EventHandler(this.UserControlQLHS_Load);
             this.tabControlCNTTHocSinh.ResumeLayout(false);
-            this.tabPageCapNhatDiem.ResumeLayout(false);
             this.tabPageQLTTHocSinh.ResumeLayout(false);
             this.tabPageQLTTHocSinh.PerformLayout();
             this.panelCapNhatThongTinHS.ResumeLayout(false);
             this.tabControlChucNang.ResumeLayout(false);
             this.tabPageSuaHocSinh.ResumeLayout(false);
-            this.tabPageThemHocSinh.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).EndInit();
+            this.tabPageThemHocSinh.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPageDeleteHS.ResumeLayout(false);
             this.tabPageDeleteHS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHocSinh)).EndInit();
+            this.tabPageCapNhatDiem.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -672,7 +751,6 @@ namespace DoAn_Demo.UI
         private System.Windows.Forms.DateTimePicker dateTimePickerNTNS;
         private System.Windows.Forms.DateTimePicker dateTimePickerNNH;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -705,5 +783,14 @@ namespace DoAn_Demo.UI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxSeach;
         private System.Windows.Forms.DataGridView dataGridViewHocSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.CheckBox checkBoxThoiHoc;
     }
 }

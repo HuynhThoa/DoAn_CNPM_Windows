@@ -102,5 +102,15 @@ namespace DoAn_Demo.Repositories
             }
             return false;
         }
+
+        /// <summary>
+        /// trả về list theo biểu thức truyền vào
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        public virtual IEnumerable<T> GetListBy(Expression<Func<T,bool>> expression)
+        {
+            return dbComponent.Where(expression).AsEnumerable().ToList();
+        }
     }
 }
