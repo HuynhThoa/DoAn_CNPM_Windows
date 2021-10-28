@@ -146,5 +146,10 @@ namespace DoAn_Demo.Services
             HocSinh hs =  hocSinhRepository.MaxID();
             return hs;
         }
+        
+        public void Remove_DSLop (DanhSachLop dsl)
+        {
+            danhSachLopRepository.Delete(dsl);
+        }
     }
 }

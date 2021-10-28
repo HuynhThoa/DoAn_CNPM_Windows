@@ -572,6 +572,7 @@ namespace DoAn_Demo.UI
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // textBoxIDXoaHS
             // 
@@ -579,6 +580,7 @@ namespace DoAn_Demo.UI
             this.textBoxIDXoaHS.Name = "textBoxIDXoaHS";
             this.textBoxIDXoaHS.Size = new System.Drawing.Size(329, 22);
             this.textBoxIDXoaHS.TabIndex = 5;
+            this.textBoxIDXoaHS.TextChanged += new System.EventHandler(this.textBoxIDXoaHS_TextChanged);
             // 
             // label12
             // 
