@@ -19,11 +19,19 @@ namespace DoAn_Demo.UI
         /// lớp học bao gồm giáo viên chủ nhiệm và loại lớp
         /// </summary>
         private LopHoc lop;
-
+        /// <summary>
+        /// Giao Viên Dam Nhiem Cua Lop
+        /// </summary>
+        private GiaoVien user;
+        /// <summary>
+        /// Học sinh của lơp
+        /// </summary>
+        private HocSinh hocSinh;
         /// <summary>
         /// danh sách học sinh của lớp
         /// </summary>
         private List<DanhSachLop> danhSachHocSinh;
+      
 
         /// <summary>
         /// dịch vụ điều khiển các tác vụ trên các bảng
@@ -41,11 +49,14 @@ namespace DoAn_Demo.UI
         private void FillData(List<DanhSachLop> danhSaches)
         {
             dataGridViewHocSinh.Rows.Clear();
-            foreach (DanhSachLop ds in danhSaches)
+            if (danhSaches != null)
             {
-                string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
-                dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS,gioiTinh,
-                                               ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
+                foreach (DanhSachLop ds in danhSaches)
+                {
+                    string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
+                    dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS, ds.HocSinh.GioiTinh,
+                                                  ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
+                }
             }
         }
 
@@ -241,6 +252,62 @@ namespace DoAn_Demo.UI
             int nienKhoa = int.Parse(DateTime.Now.Year.ToString().Substring(2));
             BangXepLoai bangXepLoai = new BangXepLoai() { XepLoai = null, HanhKiem = null, NienKhoa = nienKhoa };
             service.CreateBangXepLoai(bangXepLoai);
+        }
+        Action<string> ShowMess = s => MessageBox.Show(s, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        /// <summary>
+        /// kiểm tra ký tự có phải là số
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns>true nếu là số</returns>
+        private bool CheckNumber(char c)
+        {
+            if (c >= '0' && c <= '9')
+            {
+                return true;
+            }
+            return false;
+        }
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            
+            int IDHS = int.Parse(textBoxIDXoaHS.Text);
+            DanhSachLop danhSachLop = danhSachHocSinh.Where(ds => ds.IDHS == IDHS).FirstOrDefault();
+            service.Remove_DSLop(danhSachLop);
+            service.Save();
+            List<DanhSachLop> danhSaches = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
+            FillData(danhSaches);
+            
+
+            
+        }
+
+        private void textBoxIDXoaHS_TextChanged(object sender, EventArgs e)
+        {
+            string IDHS = textBoxIDXoaHS.Text.Trim();
+            if (IDHS.Length > 0)
+            {
+                List<DanhSachLop> list = danhSachHocSinh.Where(hs => hs.HocSinh.IDHS.ToString().Contains(IDHS)).ToList();
+                FillData(list);
+            }
+            else
+            {
+                FillData(danhSachHocSinh);
+            }
+            int length = IDHS.Length;
+
+            if (length > 0)
+            {
+
+
+                if (!CheckNumber(IDHS[length - 1]))
+                {
+                    ShowMess("Vui lòng nhập số !!!");
+                    textBoxIDXoaHS.Text = IDHS.Substring(0, length - 1);
+
+                    return;
+                }
+            }
+            
         }
     }
 }
