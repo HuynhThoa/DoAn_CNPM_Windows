@@ -169,6 +169,7 @@ namespace DoAn_Demo.UI
             this.buttonUpdate.TabIndex = 23;
             this.buttonUpdate.Text = "Sửa";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonKMFDLKSN
             // 
@@ -249,6 +250,7 @@ namespace DoAn_Demo.UI
             this.textBoxSDT.Name = "textBoxSDT";
             this.textBoxSDT.Size = new System.Drawing.Size(329, 26);
             this.textBoxSDT.TabIndex = 3;
+            this.textBoxSDT.TextChanged += new System.EventHandler(this.textBoxSDTThemHS_TextChanged);
             // 
             // textBoxDiaChi
             // 
@@ -256,6 +258,7 @@ namespace DoAn_Demo.UI
             this.textBoxDiaChi.Name = "textBoxDiaChi";
             this.textBoxDiaChi.Size = new System.Drawing.Size(329, 26);
             this.textBoxDiaChi.TabIndex = 3;
+            this.textBoxDiaChi.TextChanged += new System.EventHandler(this.textBoxDiaChiThemHS_TextChanged);
             // 
             // textBoxNamePH
             // 
@@ -263,6 +266,7 @@ namespace DoAn_Demo.UI
             this.textBoxNamePH.Name = "textBoxNamePH";
             this.textBoxNamePH.Size = new System.Drawing.Size(329, 26);
             this.textBoxNamePH.TabIndex = 3;
+            this.textBoxNamePH.TextChanged += new System.EventHandler(this.textBoxNameThemHS_TextChanged);
             // 
             // textBoxName
             // 
@@ -270,6 +274,7 @@ namespace DoAn_Demo.UI
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(329, 26);
             this.textBoxName.TabIndex = 3;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxNameThemHS_TextChanged);
             // 
             // textBoxIDHS
             // 
@@ -278,6 +283,7 @@ namespace DoAn_Demo.UI
             this.textBoxIDHS.Size = new System.Drawing.Size(329, 26);
             this.textBoxIDHS.TabIndex = 3;
             this.textBoxIDHS.TextChanged += new System.EventHandler(this.textBoxIDHS_TextChanged);
+            this.textBoxIDHS.Leave += new System.EventHandler(this.textBoxIDHS_Leave);
             // 
             // dateTimePickerNTH
             // 

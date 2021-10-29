@@ -151,5 +151,10 @@ namespace DoAn_Demo.Services
         {
             danhSachLopRepository.Delete(dsl);
         }
+
+        internal void Update_Infor_HocSinh(HocSinh hocSinh)
+        {
+            hocSinhRepository.Edit(hocSinh);
+        }
     }
 }

@@ -18,19 +18,19 @@ namespace DoAn_Demo.UI
         /// <summary>
         /// lớp học bao gồm giáo viên chủ nhiệm và loại lớp
         /// </summary>
-        private LopHoc lop;
+        private  LopHoc lop;
         /// <summary>
         /// Giao Viên Dam Nhiem Cua Lop
         /// </summary>
-        private GiaoVien user;
+        private  GiaoVien user;
         /// <summary>
         /// Học sinh của lơp
         /// </summary>
-        private HocSinh hocSinh;
+        private  HocSinh hocSinh;
         /// <summary>
         /// danh sách học sinh của lớp
         /// </summary>
-        private List<DanhSachLop> danhSachHocSinh;
+        private  List<DanhSachLop> danhSachHocSinh;
       
 
         /// <summary>
@@ -54,14 +54,10 @@ namespace DoAn_Demo.UI
             if (danhSaches != null)
             {
 
-                string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
-                dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS, gioiTinh,
-                                               ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
-
                 foreach (DanhSachLop ds in danhSaches)
                 {
                     string gioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ";
-                    dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS, ds.HocSinh.GioiTinh,
+                    dataGridViewHocSinh.Rows.Add(ds.IDHS, ds.HocSinh.TenHS, ds.HocSinh.TenPH, ds.HocSinh.NTNS,gioiTinh,
                                                   ds.HocSinh.DiaChi, ds.HocSinh.SDT, ds.HocSinh.NNH);
                 }
 
@@ -251,28 +247,19 @@ namespace DoAn_Demo.UI
             }
         }
 
+        
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             try
             {
+                bool check_Data = Check_Data_Exists(textBoxNameThemHS, textBoxPhuHuynhThemHS,textBoxDiaChiThemHS,textBoxSDTThemHS);
+                if (!check_Data) return;
                 //tên học sinh
                 string tenHS = textBoxNameThemHS.Text.Trim();
-                if (!Check_HoTen(tenHS))
-                {
-                    ShowErr("Tên không hợp lệ", "Lỗi");
-                    return;
-                }
-
                 string tenPH = textBoxPhuHuynhThemHS.Text.Trim();
                 string diaChi = textBoxDiaChiThemHS.Text.Trim();
-
-                //sdt
                 string sdt = textBoxSDTThemHS.Text.Trim();
-                if (sdt.Length < 9)
-                {
-                    ShowErr("Số điện thoại phải > 9 và nhỏ hơn 13", "Thông báo");
-                    return;
-                }
+               
 
                 //ngay thang
                 DateTime ntns = dateTimePickerNTNSThemHS.Value;
@@ -309,9 +296,69 @@ namespace DoAn_Demo.UI
             }
 
         }
-        
+
+        /// <summary>
+        /// check data exist in textbox
+        /// </summary>
+        /// <param name="textBoxNameThemHS">tên học sinh</param>
+        /// <param name="textBoxPhuHuynhThemHS">tên phụ huynh</param>
+        /// <param name="textBoxDiaChiThemHS">địa chỉ</param>
+        /// <param name="textBoxSDT">sdt </param>
+        /// <returns>true if all true else false</returns>
+        private bool Check_Data_Exists(TextBox textBoxNameThemHS, TextBox textBoxPhuHuynhThemHS, TextBox textBoxDiaChiThemHS, TextBox textBoxSDTThemHS)
+        {
+            string tenHS = textBoxNameThemHS.Text.Trim();
+            if (!Check_HoTen(tenHS) || tenHS.Length <= 0)
+            {
+                ShowErr("Tên không hợp lệ, không được để trống tên, và không xuất hiện số trong tên", "Lỗi");
+                return false;
+            }
+
+            string tenPH = textBoxPhuHuynhThemHS.Text.Trim();
+            if (tenPH.Length <= 0 || !Check_HoTen(tenPH))
+            {
+                ShowErr("Tên không hợp lệ, không được để trống tên, và không xuất hiện số trong tên", "Lỗi");
+                return false ;
+            }
+            string diaChi = textBoxDiaChiThemHS.Text.Trim();
+
+            if (diaChi.Length <= 0)
+            {
+                ShowErr("địa chỉ không được bỏ trống", "Lỗi");
+                return false;
+            }
+            //sdt
+            string sdt = textBoxSDTThemHS.Text.Trim();
+            if (sdt.Length < 9)
+            {
+                ShowErr("Số điện thoại phải > 9 và nhỏ hơn 13", "Thông báo");
+                return false;
+            }
+            return true;
+
+        }
+
         private void textBoxIDHS_TextChanged(object sender, EventArgs e)
         {
+            string idHS = textBoxIDHS.Text.Trim();
+            if (idHS.Length > 0)
+            {
+                int id;
+                bool parseId = int.TryParse(idHS, out id);
+                if (parseId)
+                {
+                    List<DanhSachLop> hocSinhs = service.GetDanhSachLop(hs => hs.IDHS == id);
+                    FillData(hocSinhs);
+                    return;
+                }
+                textBoxIDHS.Text = null;
+                ShowErr("ID phải là số", "Thông báo");
+            }
+            else
+            {
+                FillData(danhSachHocSinh);
+            }
+            
 
         }
 
@@ -407,6 +454,67 @@ namespace DoAn_Demo.UI
                 }
             }
             
+        }
+
+        
+        private void textBoxIDHS_Leave(object sender, EventArgs e)
+        {
+            string idHS = textBoxIDHS.Text.Trim();
+
+            if(idHS.Length > 0)
+            {
+                int idhs = int.Parse(idHS);
+                DanhSachLop hocSinhInDanhSach = service.GetDanhSachLop(hs => hs.IDHS == idhs).FirstOrDefault();
+                if(hocSinhInDanhSach == null)
+                {
+                    ShowErr("Không tồn tại học sinh với ID này","Thông báo");
+                    textBoxIDHS.Text = null;
+                    return;
+                }
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            bool check_Data = Check_Data_Exists(textBoxName, textBoxNamePH, textBoxDiaChi, textBoxSDT);
+            if (!check_Data) return;
+
+            /// get attribute Hoc Sinh
+            int iDHS;
+            bool parseId = int.TryParse(textBoxIDHS.Text.Trim(),out iDHS);
+            if(!parseId)
+            {
+                ShowErr("Id học sinh không được bỏ trống", "thông báo");
+                return;
+            }
+
+            string tenHS = textBoxName.Text.Trim();
+            string tenPH = textBoxNamePH.Text.Trim();
+            string diaChi = textBoxDiaChi.Text.Trim();
+            string sdt = textBoxSDT.Text.Trim();
+            bool gioiTinh = false;
+            if (radioButtonNam.Checked)
+            {
+                gioiTinh = true;
+            }
+            DateTime ntns = dateTimePickerNTNS.Value;
+            DateTime nnh = dateTimePickerNNH.Value;
+            DateTime nth ;
+
+            HocSinh hocSinh = new HocSinh() { IDHS = iDHS, TenHS = tenHS, TenPH = tenPH, DiaChi = diaChi, SDT = sdt, NTNS = ntns, NNH = nnh};
+
+            if (checkBoxThoiHoc.CheckState == CheckState.Checked)
+            {
+                nth = dateTimePickerNTH.Value;
+                hocSinh.NTH = nth;
+            }
+            
+            service.Update_Infor_HocSinh(hocSinh);
+            service.Save();
+            ShowInfo("Sửa thông tin sinh viên thành công");
+
+            FillData(danhSachHocSinh);
+
         }
     }
 }
