@@ -1,6 +1,7 @@
 ﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using DoAn_Demo.Data;
 using DoAn_Demo.Entities;
+using DoAn_Demo.Reports.Model;
 using DoAn_Demo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAn_Demo.Services
 {
@@ -25,10 +27,11 @@ namespace DoAn_Demo.Services
         private IBangXepLoaiRepository bangXepLoaiRepository;
         private IDanhSachLopRepository danhSachLopRepository;
         private IMonHocRepository monHocRepository;
-
+        private DbQLHocSinh dbContext;
         public QLHSService()
         {
             DbQLHocSinh db = new DbQLHocSinh();
+            dbContext = db;
             unitOfWork = new UnitOfWork(db);
             hocSinhRepository = new HocSinhRepository(db);
             giaoVienRepository = new GiaoVienRepository(db);
@@ -38,6 +41,27 @@ namespace DoAn_Demo.Services
             bangXepLoaiRepository = new BangXepLoaiRepository(db);
             danhSachLopRepository = new DanhSachLopRepository(db);
             monHocRepository = new MonHocRepository(db);
+        }
+
+        internal void FillDataBangDiem(LopHoc lop,DataGridView dgv)
+        {
+            var list =  ( from lophoc in dbContext.DanhSachLops
+                                        join bangDiem in dbContext.BangXepLoais on lophoc.IDBXL equals bangDiem.IDBXL
+                                        join ct in dbContext.CTBangDiems on bangDiem.IDBXL equals ct.IDBXL
+                                        join mh in dbContext.MonHocs on ct.IDMH equals mh.IDMH
+                                        where lophoc.IDLopHoc == lop.IDLopHoc
+                                        select new CTBangDiem123
+                                        {
+                                            IDHS = lophoc.IDHS,
+                                            HoTen = lophoc.HocSinh.TenHS,
+                                            TenMon = mh.TenMH,
+                                            DiemKyMot = ct.DiemKyMot,
+                                            DiemKyHai = ct.DiemKyHai
+                                        }).ToList();
+            foreach(var ct in list)
+            {
+                dgv.Rows.Add(ct.IDHS, ct.HoTen, ct.TenMon, ct.DiemKyMot, ct.DiemKyHai);
+            }
         }
 
         /// <summary>
