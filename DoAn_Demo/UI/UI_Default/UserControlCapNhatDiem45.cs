@@ -1,4 +1,5 @@
 ﻿using DoAn_Demo.Entities;
+using DoAn_Demo.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,14 @@ namespace DoAn_Demo.UI.UI_Default
 {
     public partial class UserControlCapNhatDiem45 : UserControl
     {
-        private List<DanhSachLop> danhSachLop;
-        public UserControlCapNhatDiem45(List<DanhSachLop> danhSachLop)
+        private LopHoc lop;
+        private List<DanhSachLop> danhSachHocSinh;
+        private QLHSService service = new QLHSService();
+        public UserControlCapNhatDiem45(LopHoc lopHoc)
         {
             InitializeComponent();
-            this.danhSachLop = danhSachLop;
+            this.lop = lopHoc;
+            this.danhSachHocSinh = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
         }
 
         private void label4_Click(object sender, EventArgs e)

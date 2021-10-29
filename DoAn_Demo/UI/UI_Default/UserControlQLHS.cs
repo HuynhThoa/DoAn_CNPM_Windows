@@ -221,12 +221,12 @@ namespace DoAn_Demo.UI
                 if (lop.IDLoaiLop < 4)
                 {
                     panelCapNhatDiem.Controls.Clear();
-                    panelCapNhatDiem.Controls.Add(new UserControlCapNhatDiem123(danhSachHocSinh));
+                    panelCapNhatDiem.Controls.Add(new UserControlCapNhatDiem123(lop));
                 }
                 else
                 {
                     panelCapNhatDiem.Controls.Clear();
-                    panelCapNhatDiem.Controls.Add(new UserControlCapNhatDiem45(danhSachHocSinh));
+                    panelCapNhatDiem.Controls.Add(new UserControlCapNhatDiem45(lop));
                 }
             }
         }

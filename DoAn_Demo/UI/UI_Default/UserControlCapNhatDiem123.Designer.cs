@@ -33,9 +33,9 @@ namespace DoAn_Demo.UI
             this.radioButtonCuoiHK1 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTiengAnh = new System.Windows.Forms.TextBox();
+            this.textBoxTiengViet = new System.Windows.Forms.TextBox();
+            this.textBoxToan = new System.Windows.Forms.TextBox();
             this.textBoxIDCapNhatDiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +44,11 @@ namespace DoAn_Demo.UI
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridViewCapNhatDiem = new System.Windows.Forms.DataGridView();
             this.buttonCapNhatDiem = new System.Windows.Forms.Button();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).BeginInit();
             this.SuspendLayout();
@@ -84,9 +89,9 @@ namespace DoAn_Demo.UI
             // 
             this.groupBox2.Controls.Add(this.radioButtonCuoiHK2);
             this.groupBox2.Controls.Add(this.radioButtonCuoiHK1);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxTiengAnh);
+            this.groupBox2.Controls.Add(this.textBoxTiengViet);
+            this.groupBox2.Controls.Add(this.textBoxToan);
             this.groupBox2.Controls.Add(this.textBoxIDCapNhatDiem);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label11);
@@ -102,26 +107,26 @@ namespace DoAn_Demo.UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Học Sinh";
             // 
-            // textBox3
+            // textBoxTiengAnh
             // 
-            this.textBox3.Location = new System.Drawing.Point(231, 309);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 26);
-            this.textBox3.TabIndex = 3;
+            this.textBoxTiengAnh.Location = new System.Drawing.Point(231, 309);
+            this.textBoxTiengAnh.Name = "textBoxTiengAnh";
+            this.textBoxTiengAnh.Size = new System.Drawing.Size(79, 26);
+            this.textBoxTiengAnh.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxTiengViet
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 265);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 26);
-            this.textBox2.TabIndex = 3;
+            this.textBoxTiengViet.Location = new System.Drawing.Point(231, 265);
+            this.textBoxTiengViet.Name = "textBoxTiengViet";
+            this.textBoxTiengViet.Size = new System.Drawing.Size(79, 26);
+            this.textBoxTiengViet.TabIndex = 3;
             // 
-            // textBox1
+            // textBoxToan
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxToan.Location = new System.Drawing.Point(231, 220);
+            this.textBoxToan.Name = "textBoxToan";
+            this.textBoxToan.Size = new System.Drawing.Size(79, 26);
+            this.textBoxToan.TabIndex = 3;
             // 
             // textBoxIDCapNhatDiem
             // 
@@ -181,6 +186,12 @@ namespace DoAn_Demo.UI
             this.dataGridViewCapNhatDiem.AllowUserToDeleteRows = false;
             this.dataGridViewCapNhatDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCapNhatDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCapNhatDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dataGridViewCapNhatDiem.Location = new System.Drawing.Point(474, 111);
             this.dataGridViewCapNhatDiem.Name = "dataGridViewCapNhatDiem";
             this.dataGridViewCapNhatDiem.ReadOnly = true;
@@ -200,6 +211,41 @@ namespace DoAn_Demo.UI
             this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
             this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ID Học Sinh";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên Học Sinh";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Môn Học";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Điểm Kỳ Một";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Điểm Kỳ Hai";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // UserControlCapNhatDiem123
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +255,7 @@ namespace DoAn_Demo.UI
             this.Controls.Add(this.dataGridViewCapNhatDiem);
             this.Name = "UserControlCapNhatDiem123";
             this.Size = new System.Drawing.Size(1501, 616);
+            this.Load += new System.EventHandler(this.UserControlCapNhatDiem123_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).EndInit();
@@ -227,11 +274,16 @@ namespace DoAn_Demo.UI
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridViewCapNhatDiem;
         private System.Windows.Forms.Button buttonCapNhatDiem;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTiengAnh;
+        private System.Windows.Forms.TextBox textBoxTiengViet;
+        private System.Windows.Forms.TextBox textBoxToan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

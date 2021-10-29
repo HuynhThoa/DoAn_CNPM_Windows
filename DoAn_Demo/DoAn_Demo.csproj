@@ -106,6 +106,7 @@
     <Compile Include="Entities\LoaiLop.cs" />
     <Compile Include="Entities\LopHoc.cs" />
     <Compile Include="Entities\MonHoc.cs" />
+    <Compile Include="Reports\Model\CTBangDiem123.cs" />
     <Compile Include="Repositories\BangXepLoaiRepository.cs" />
     <Compile Include="Repositories\CTBangDiemRepository.cs" />
     <Compile Include="Repositories\DanhSachLopRepository.cs" />
@@ -220,6 +221,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reports\RDLC\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
