@@ -129,6 +129,11 @@ namespace DoAn_Demo.Services
             return bangXepLoai;
         }
 
+        internal void UpdateCTBangDiem(CTBangDiem cTBangDiemTiengAnh)
+        {
+            cTBangDiemRepository.Edit(cTBangDiemTiengAnh);
+        }
+
         public List<MonHoc> GetDanhSachMonHocBy(Expression<Func<MonHoc, bool>> expression)
         {
             List<MonHoc> list = (List<MonHoc>)monHocRepository.GetListBy(expression);
@@ -144,6 +149,12 @@ namespace DoAn_Demo.Services
         public void AddCT_BangDiem(CTBangDiem ct)
         {
             cTBangDiemRepository.Add(ct);   
+        }
+
+        internal CTBangDiem getCTBangDiem(Expression<Func<CTBangDiem, bool>> expression)
+        {
+            CTBangDiem ct = cTBangDiemRepository.GetBy(expression);
+            return ct;
         }
 
         internal void Add_HS(HocSinh hs)
