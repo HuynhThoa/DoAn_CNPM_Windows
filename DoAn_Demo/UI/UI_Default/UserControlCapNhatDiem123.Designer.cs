@@ -43,12 +43,12 @@ namespace DoAn_Demo.UI
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridViewCapNhatDiem = new System.Windows.Forms.DataGridView();
-            this.buttonCapNhatDiem = new System.Windows.Forms.Button();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCapNhatDiem = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDiem)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,7 @@ namespace DoAn_Demo.UI
             this.radioButtonCuoiHK2.TabStop = true;
             this.radioButtonCuoiHK2.Text = "Cuối HK2";
             this.radioButtonCuoiHK2.UseVisualStyleBackColor = true;
+            this.radioButtonCuoiHK2.CheckedChanged += new System.EventHandler(this.radioButtonCuoiHK2_CheckedChanged);
             // 
             // radioButtonCuoiHK1
             // 
@@ -134,6 +135,8 @@ namespace DoAn_Demo.UI
             this.textBoxIDCapNhatDiem.Name = "textBoxIDCapNhatDiem";
             this.textBoxIDCapNhatDiem.Size = new System.Drawing.Size(269, 26);
             this.textBoxIDCapNhatDiem.TabIndex = 3;
+            this.textBoxIDCapNhatDiem.TextChanged += new System.EventHandler(this.textBoxIDCapNhatDiem_TextChanged);
+            this.textBoxIDCapNhatDiem.Leave += new System.EventHandler(this.textBoxIDCapNhatDiem_Leave);
             // 
             // label3
             // 
@@ -200,16 +203,7 @@ namespace DoAn_Demo.UI
             this.dataGridViewCapNhatDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCapNhatDiem.Size = new System.Drawing.Size(994, 394);
             this.dataGridViewCapNhatDiem.TabIndex = 14;
-            // 
-            // buttonCapNhatDiem
-            // 
-            this.buttonCapNhatDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCapNhatDiem.Location = new System.Drawing.Point(33, 530);
-            this.buttonCapNhatDiem.Name = "buttonCapNhatDiem";
-            this.buttonCapNhatDiem.Size = new System.Drawing.Size(151, 34);
-            this.buttonCapNhatDiem.TabIndex = 16;
-            this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
-            this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
+            this.dataGridViewCapNhatDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCapNhatDiem_CellClick);
             // 
             // Column5
             // 
@@ -245,6 +239,17 @@ namespace DoAn_Demo.UI
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // buttonCapNhatDiem
+            // 
+            this.buttonCapNhatDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCapNhatDiem.Location = new System.Drawing.Point(33, 530);
+            this.buttonCapNhatDiem.Name = "buttonCapNhatDiem";
+            this.buttonCapNhatDiem.Size = new System.Drawing.Size(151, 34);
+            this.buttonCapNhatDiem.TabIndex = 16;
+            this.buttonCapNhatDiem.Text = "Cập Nhật Điểm";
+            this.buttonCapNhatDiem.UseVisualStyleBackColor = true;
+            this.buttonCapNhatDiem.Click += new System.EventHandler(this.buttonCapNhatDiem_Click);
             // 
             // UserControlCapNhatDiem123
             // 
