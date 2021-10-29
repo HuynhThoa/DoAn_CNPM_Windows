@@ -415,45 +415,76 @@ namespace DoAn_Demo.UI
         }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            
-            int IDHS = int.Parse(textBoxIDXoaHS.Text);
-            DanhSachLop danhSachLop = danhSachHocSinh.Where(ds => ds.IDHS == IDHS).FirstOrDefault();
-            service.Remove_DSLop(danhSachLop);
-            service.Save();
-            List<DanhSachLop> danhSaches = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
-            FillData(danhSaches);
-            
+            string IDHSs = textBoxIDXoaHS.Text.Trim();
+            int IDHSi = int.Parse(IDHSs);
+            DanhSachLop danhSachLop;
 
-            
+            danhSachLop = danhSachHocSinh.Where(ds => ds.IDHS == IDHSi).FirstOrDefault();
+            if (danhSachLop == null)
+            {
+                ShowMess("ID học sinh không tồn tại!");
+                return;
+            }
+            else
+            {
+               DialogResult dialogResult = MessageBox.Show("Bạn Có Chắc Muốn Xóa?", "Cảnh Báo!", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    danhSachLop = danhSachHocSinh.Where(ds => ds.IDHS == IDHSi).FirstOrDefault();
+                    service.Remove_DSLop(danhSachLop);
+                    service.Save();
+                    List<DanhSachLop> danhSaches = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
+                    FillData(danhSaches);
+                }
+                else
+                    return;
+            }
+ 
         }
 
         private void textBoxIDXoaHS_TextChanged(object sender, EventArgs e)
         {
-            string IDHS = textBoxIDXoaHS.Text.Trim();
-            if (IDHS.Length > 0)
+            string IDHSs = textBoxIDXoaHS.Text.Trim();
+            int IDHSi;
+            if(!int.TryParse(IDHSs, out int a)) { IDHSi = 0; }
+            else IDHSi = int.Parse(IDHSs);
+
+            DanhSachLop danhSachLop;
+
+
+            if (IDHSs.Length >= 0)
             {
-                List<DanhSachLop> list = danhSachHocSinh.Where(hs => hs.HocSinh.IDHS.ToString().Contains(IDHS)).ToList();
-                FillData(list);
+                danhSachLop = danhSachHocSinh.Where(ds => ds.IDHS == IDHSi).FirstOrDefault();
+                List<DanhSachLop> danhSachess = service.GetDanhSachLop(ds => ds.IDHS == IDHSi);
+                
+                FillData(danhSachess);
             }
             else
             {
+
                 FillData(danhSachHocSinh);
             }
-            int length = IDHS.Length;
+            int length = IDHSs.Length;
 
             if (length > 0)
             {
 
 
-                if (!CheckNumber(IDHS[length - 1]))
+                if (!CheckNumber(IDHSs[length - 1]))
                 {
                     ShowMess("Vui lòng nhập số !!!");
-                    textBoxIDXoaHS.Text = IDHS.Substring(0, length - 1);
+                    textBoxIDXoaHS.Text = IDHSs.Substring(0, length - 1);
 
                     return;
                 }
             }
-            
+
+
+        }
+
+        private void dataGridViewHocSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         
