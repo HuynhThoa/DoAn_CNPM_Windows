@@ -24,6 +24,7 @@ namespace DoAn_Demo.UI
             this.lop = lopHoc;
             this.danhSachHocSinh = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
             monHoc = service.GetDanhSachMonHocBy(mh => mh.IDLoaiLop == lop.IDLoaiLop);
+            
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -38,8 +39,8 @@ namespace DoAn_Demo.UI
 
         private void UserControlCapNhatDiem123_Load(object sender, EventArgs e)
         {
-            
-            Remote_Data(textBoxIDCapNhatDiem, textBoxToan, textBoxTiengAnh, textBoxTiengViet,false);
+
+            Remote_Data(textBoxIDCapNhatDiem, textBoxToan, textBoxTiengAnh, textBoxTiengViet, false);
             FillData(lop, dataGridViewCapNhatDiem);
         }
         private void Remote_Data(TextBox textBoxIDCapNhatDiem, TextBox textBoxToan, TextBox textBoxTiengAnh, TextBox textBoxTiengViet, bool state)
@@ -49,7 +50,7 @@ namespace DoAn_Demo.UI
 
         }
 
-        private void FillData(LopHoc lop,DataGridView data)
+        private void FillData(LopHoc lop, DataGridView data)
         {
             data.Rows.Clear();
             service.FillDataBangDiem(lop, data);
@@ -100,7 +101,7 @@ namespace DoAn_Demo.UI
         private void buttonCapNhatDiem_Click(object sender, EventArgs e)
         {
             string idHS = textBoxIDCapNhatDiem.Text.Trim();
-            textBoxIDCapNhatDiem_Leave(sender,e);
+            textBoxIDCapNhatDiem_Leave(sender, e);
             if (idHS.Length <= 0)
             {
                 ShowErr("Không có học sinh khớp với id này");
@@ -108,17 +109,17 @@ namespace DoAn_Demo.UI
             }
 
             int diemToan;
-            if(!CheckDiem_TextBox(textBoxToan,out diemToan))
+            if (!CheckDiem_TextBox(textBoxToan, out diemToan))
             {
                 return;
             }
             int diemTiengViet;
-            if (!CheckDiem_TextBox(textBoxTiengViet,out diemTiengViet))
+            if (!CheckDiem_TextBox(textBoxTiengViet, out diemTiengViet))
             {
                 return;
             }
             int diemTiengAnh;
-            if (!CheckDiem_TextBox(textBoxTiengAnh,out diemTiengAnh))
+            if (!CheckDiem_TextBox(textBoxTiengAnh, out diemTiengAnh))
             {
                 return;
             }
@@ -134,7 +135,7 @@ namespace DoAn_Demo.UI
             if (radioButtonCuoiHK1.Checked)
             {
                 int idbxl = (int)hocSinh.IDBXL;
-                Update_Diem_KyMot(idMonToan,idbxl,diemToan);
+                Update_Diem_KyMot(idMonToan, idbxl, diemToan);
                 Update_Diem_KyMot(idMonTA, idbxl, diemTiengAnh);
                 Update_Diem_KyMot(idMonTV, idbxl, diemTiengViet);
             }
@@ -145,11 +146,58 @@ namespace DoAn_Demo.UI
                 Update_Diem_KyHai(idMonTA, idbxl, diemTiengAnh);
                 Update_Diem_KyHai(idMonTV, idbxl, diemTiengViet);
             }
-                
+
 
             FillData(lop, dataGridViewCapNhatDiem);
+            UpdateXepLoai(idhs);
         }
-        private void Update_Diem_KyMot(int idMonHoc,int bxl, int diemKy1)
+
+        private void UpdateXepLoai(int iDHS)
+        {
+            BangXepLoai bxl = danhSachHocSinh.Where(h => h.IDHS == iDHS).Select(h => h.BangXepLoai).FirstOrDefault();
+
+            List<CTBangDiem> cTBangDiem = service.getListCTBangDiem(ct => ct.BangXepLoai.IDBXL == bxl.IDBXL);
+            int? avg = 0;
+            foreach (CTBangDiem ct in cTBangDiem)
+            {
+                if(ct.DiemKyMot != null && ct.DiemKyHai != null)
+                {
+                    avg += (ct.DiemKyMot + ct.DiemKyHai)/2;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            avg /= 3;
+            if(avg >= 9)
+            {
+                SetXepLoai("Giỏi", bxl);
+            }
+            else if(avg >= 7)
+            {
+                SetXepLoai("Khá",bxl);
+            }
+            else if(avg >= 5)
+            {
+                SetXepLoai("Trung Bình",bxl);
+            }
+            else
+            {
+                SetXepLoai("Lưu Ban",bxl);
+            }
+            
+        }
+
+        private void SetXepLoai(string xepLoai, BangXepLoai bxl)
+        {
+            bxl.XepLoai = xepLoai;
+            bxl.HanhKiem = "Tốt";
+            service.updateBangXepLoai(bxl);
+            service.Save();
+        }
+
+        private void Update_Diem_KyMot(int idMonHoc, int bxl, int diemKy1)
         {
             CTBangDiem oldCTBangdiem = service.getCTBangDiem(ct => ct.IDMH == idMonHoc && ct.IDBXL == bxl);
             CTBangDiem newCTBangDiem = new CTBangDiem() { IDMH = idMonHoc, IDBXL = (int)bxl, DiemKyMot = diemKy1, DiemKyHai = oldCTBangdiem.DiemKyHai };
@@ -168,9 +216,9 @@ namespace DoAn_Demo.UI
             int maMon = monHoc.Where(m => m.TenMH.ToLower().Contains(tenMon)).Select(m => m.IDMH).FirstOrDefault();
             return maMon;
         }
-        
 
-        private bool CheckDiem_TextBox(TextBox textBox,out int diemOK)
+
+        private bool CheckDiem_TextBox(TextBox textBox, out int diemOK)
         {
             int diem;
             if (!int.TryParse(textBox.Text.Trim(), out diem))

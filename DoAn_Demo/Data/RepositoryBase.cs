@@ -41,6 +41,7 @@ namespace DoAn_Demo.Repositories
         {
             T t = dbComponent.Where(where).AsEnumerable().FirstOrDefault();
             return t;
+
         }
 
         /// <summary>

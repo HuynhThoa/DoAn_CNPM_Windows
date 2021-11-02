@@ -42,26 +42,20 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -74,6 +68,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -106,7 +101,7 @@
     <Compile Include="Entities\LoaiLop.cs" />
     <Compile Include="Entities\LopHoc.cs" />
     <Compile Include="Entities\MonHoc.cs" />
-    <Compile Include="Reports\Model\CTBangDiem123.cs" />
+    <Compile Include="Reports\ModelReport\XepLoaiHocSinh.cs" />
     <Compile Include="Repositories\BangXepLoaiRepository.cs" />
     <Compile Include="Repositories\CTBangDiemRepository.cs" />
     <Compile Include="Repositories\DanhSachLopRepository.cs" />
@@ -115,7 +110,15 @@
     <Compile Include="Repositories\LoaiLopRepository.cs" />
     <Compile Include="Repositories\LopHocRepository.cs" />
     <Compile Include="Repositories\MonHocRepository.cs" />
+    <Compile Include="Reports\ModelReport\CTBangDiem.cs" />
     <Compile Include="Services\QLHSService.cs" />
+    <Compile Include="UI\UI_Default\DanhSachXepLoaiHocSinh.cs" />
+    <Compile Include="UI\UI_Default\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UI_Default\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UI_Default\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,18 +152,34 @@
     <Compile Include="UI\UI_Default\UserControlQLHS.Designer.cs">
       <DependentUpon>UserControlQLHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UI_Default\UserControlQLLopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UI_Default\UserControlQLLopHoc.Designer.cs">
+      <DependentUpon>UserControlQLLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UI_Default\UserControlQLThongTinGiaoVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UI_Default\UserControlQLThongTinGiaoVien.Designer.cs">
+      <DependentUpon>UserControlQLThongTinGiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UI_Default\UserControlThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UI_Default\UserControlThongKe.Designer.cs">
       <DependentUpon>UserControlThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UI_Default\UserControlXemGiaoVien.cs">
+    <Compile Include="UI\UI_Default\UserControlViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\UI_Default\UserControlXemGiaoVien.Designer.cs">
-      <DependentUpon>UserControlXemGiaoVien.cs</DependentUpon>
+    <Compile Include="UI\UI_Default\UserControlViewer.Designer.cs">
+      <DependentUpon>UserControlViewer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\ReportXepLoaiHocSinh.rdlc" />
+    <EmbeddedResource Include="UI\UI_Default\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UI_Default\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,13 +204,24 @@
     <EmbeddedResource Include="UI\UI_Default\UserControlQLHS.resx">
       <DependentUpon>UserControlQLHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UI_Default\UserControlQLLopHoc.resx">
+      <DependentUpon>UserControlQLLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UI_Default\UserControlQLThongTinGiaoVien.resx">
+      <DependentUpon>UserControlQLThongTinGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UI_Default\UserControlThongKe.resx">
       <DependentUpon>UserControlThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UI_Default\UserControlXemGiaoVien.resx">
-      <DependentUpon>UserControlXemGiaoVien.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UI_Default\UserControlViewer.resx">
+      <DependentUpon>UserControlViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DoAn_Demo.Entities.BangXepLoai.datasource" />
+    <None Include="Properties\DataSources\DoAn_Demo.Entities.DanhSachLop.datasource" />
+    <None Include="Properties\DataSources\DoAn_Demo.Entities.HocSinh.datasource" />
+    <None Include="Properties\DataSources\DoAn_Demo.Reports.ModelReport.XepLoaiHocSinh.datasource" />
+    <None Include="Properties\DataSources\DoAn_Demo.Reports.ModelReport.XepLoaiHS.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -221,8 +251,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\RDLC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

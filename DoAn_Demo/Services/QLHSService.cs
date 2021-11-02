@@ -1,7 +1,8 @@
 ﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using DoAn_Demo.Data;
 using DoAn_Demo.Entities;
-using DoAn_Demo.Reports.Model;
+using DoAn_Demo.Reports.ModelReport;
+//using DoAn_Demo.Reports.ModelReport;
 using DoAn_Demo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,21 @@ namespace DoAn_Demo.Services
     public class QLHSService 
     {
         private IUnitOfWork unitOfWork;
+
+        internal List<LopHoc> getListLopHoc()
+        {
+            List<LopHoc> l = (List<LopHoc>)lopHocRepository.GetAll();
+            return l;
+        }
+
         private IHocSinhRepository hocSinhRepository;
+
+        internal List<LoaiLop> GetListLoaiLop()
+        {
+            List<LoaiLop> loais = (List<LoaiLop>)loaiLopRepository.GetAll();
+            return loais;
+        }
+
         private IGiaoVienRepository giaoVienRepository;
         private ILoaiLopRepository loaiLopRepository;
         private ILopHocRepository lopHocRepository;
@@ -64,12 +79,40 @@ namespace DoAn_Demo.Services
             }
         }
 
+        internal List<XepLoaiHocSinh> GetListXepLoaiHocSinh()
+        {
+            int nienKhoa = int.Parse(DateTime.Now.Year.ToString().Substring(2)) ;
+            int stt = 0;
+            List<XepLoaiHocSinh> xepLoais = (from ds in dbContext.DanhSachLops
+                                             join bxl in dbContext.BangXepLoais on ds.IDBXL equals bxl.IDBXL
+                                             where bxl.NienKhoa == nienKhoa
+                                             select new XepLoaiHocSinh()
+                                             {
+                                                 STT = stt + 1,
+                                                 IDHS = ds.IDHS,
+                                                 TenHS = ds.HocSinh.TenHS,
+                                                 NTNS = ds.HocSinh.NTNS,
+                                                 GioiTinh = ds.HocSinh.GioiTinh ? "Nam" : "Nữ",
+                                                 HanhKiem = bxl.HanhKiem,
+                                                 XepLoai = bxl.XepLoai,
+                                                 TenLop = ds.LopHoc.TenLop,
+                                                 NTH = ds.HocSinh.NTH
+
+                                             }).ToList();
+            return xepLoais;
+        }
+
         /// <summary>
         /// Lưu dữ liệu vừa thực hiện
         /// </summary>
         public void Save()
         {
             unitOfWork.Save();
+        }
+
+        internal void addNewLopHoc(LopHoc lopHoc)
+        {
+            lopHocRepository.Add(lopHoc);
         }
 
         /// <summary>
@@ -81,6 +124,11 @@ namespace DoAn_Demo.Services
         {
             GiaoVien giaoVien = giaoVienRepository.GetBy(expression);
             return giaoVien;
+        }
+
+        internal void UpdateLopHoc(LopHoc lopHoc)
+        {
+            lopHocRepository.Edit(lopHoc);
         }
 
         /// <summary>
@@ -140,6 +188,11 @@ namespace DoAn_Demo.Services
             return list;
         }
 
+        internal void DeleteLopHoc(LopHoc lop)
+        {
+            lopHocRepository.Delete(lop);
+        }
+
         public HocSinh GetHocSinh(Expression<Func<HocSinh, bool>> expression)
         {
             HocSinh hocSinh = hocSinhRepository.GetBy(expression);
@@ -155,6 +208,12 @@ namespace DoAn_Demo.Services
         {
             CTBangDiem ct = cTBangDiemRepository.GetBy(expression);
             return ct;
+        }
+
+        internal List<CTBangDiem> getListCTBangDiem(Expression<Func<CTBangDiem, bool>> expression)
+        {
+            List<CTBangDiem> listCTBD = (List<CTBangDiem>)cTBangDiemRepository.GetListBy(expression);
+            return listCTBD;
         }
 
         internal void Add_HS(HocSinh hs)
@@ -176,6 +235,16 @@ namespace DoAn_Demo.Services
             danhSachLopRepository.Add(danhSachLop);
         }
 
+        internal void AddGiaoVien(GiaoVien giaoVien)
+        {
+            giaoVienRepository.Add(giaoVien);
+        }
+
+        internal void updateBangXepLoai(BangXepLoai bxl)
+        {
+            bangXepLoaiRepository.Edit(bxl);
+        }
+
         public HocSinh GetHocSinhNew()
         {
             HocSinh hs =  hocSinhRepository.MaxID();
@@ -190,6 +259,16 @@ namespace DoAn_Demo.Services
         internal void Update_Infor_HocSinh(HocSinh hocSinh)
         {
             hocSinhRepository.Edit(hocSinh);
+        }
+
+        internal void UpdateGiaoVien(GiaoVien giaoVien)
+        {
+            giaoVienRepository.Edit(giaoVien);
+        }
+
+        internal void DeleteGiaoVien(GiaoVien giaoVien)
+        {
+            giaoVienRepository.Delete(giaoVien);
         }
     }
 }

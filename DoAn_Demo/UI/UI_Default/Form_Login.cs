@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,28 +51,53 @@ namespace DoAn_Demo
                 ShowMess("Mật khẩu không hợp lệ");
                 return;
             }
+            GiaoVien giaoVien = service.GetGiaoVien(gv =>  string.Compare(numberPhone, gv.SDT.ToString(), true) == 0);
             
-            GiaoVien giaoVien = service.GetGiaoVien(gv => String.Compare(password, gv.Pass, true) == 0 && string.Compare(numberPhone, gv.SDT.ToString(), true) == 0);
             if(giaoVien != null)
             {
-                Form_Menu form = new Form_Menu(giaoVien);
-                this.Visible = false;
-                form.Show();
+               // string pass = Decrypt(giaoVien.Pass);
+                if(string.Compare(password,giaoVien.Pass,true) == 0)
+                {
+                    Form_Menu form = new Form_Menu(giaoVien);
+                    this.Visible = false;
+                    form.ShowDialog();
+                    
+                }
+                else
+                {
+                    ShowMess("Nhập sai số điện thoại hoặc password");
+                    return;
+                }
+
             }
             else
             {
                 ShowMess("Nhập sai số điện thoại hoặc password");
                 return;
             }
-            
-            
+
         }
 
+        
         public void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();            
+            Application.Exit();           
         }
+        string key = "nguyenhoangkhang";
+        
+            private string Encrypt(string value)
+            {
+                byte[] plaintext = Encoding.Unicode.GetBytes(value);
 
+                CspParameters cspParams = new CspParameters();
+                cspParams.KeyContainerName = key;
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, cspParams))
+                {
+                    byte[] encryptedData = RSA.Encrypt(plaintext, false);
+                    return Convert.ToBase64String(encryptedData);
+                }
+            }
+        
         private void textBoxSDT_TextChanged(object sender, EventArgs e)
         {
             string numberPhone = textBoxSDT.Text.Trim();
@@ -95,7 +121,18 @@ namespace DoAn_Demo
                 return;
             }
         }
-       
+        private string Decrypt(string value)
+        {
+            byte[] encryptedData = Convert.FromBase64String(value);
+
+            CspParameters cspParams = new CspParameters();
+            cspParams.KeyContainerName = key;
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, cspParams))
+            {
+                byte[] decryptedData = RSA.Decrypt(encryptedData, false);
+                return Encoding.Unicode.GetString(decryptedData);
+            }
+        }
         Action<string> ShowMess = s => MessageBox.Show(s, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         /// <summary>
