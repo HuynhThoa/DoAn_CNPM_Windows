@@ -640,7 +640,6 @@ namespace DoAn_Demo.UI
             this.dataGridViewHocSinh.Size = new System.Drawing.Size(816, 488);
             this.dataGridViewHocSinh.TabIndex = 19;
             this.dataGridViewHocSinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocSinh_CellClick);
-            this.dataGridViewHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHocSinh_CellContentClick);
             // 
             // Column1
             // 

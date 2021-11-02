@@ -68,8 +68,8 @@ namespace DoAn_Demo.UI
             string[] regex = { "/", " ", ":" };
             string[] arrStr = date.Split(regex, System.StringSplitOptions.RemoveEmptyEntries);
 
-            int dd = int.Parse(arrStr[0]);
-            int mm = int.Parse(arrStr[1]);
+            int dd = int.Parse(arrStr[1]);
+            int mm = int.Parse(arrStr[0]);
             int yyyy = int.Parse(arrStr[2]);
             int hh = int.Parse(arrStr[3]);
             return new DateTime(yyyy, mm, dd, hh, 00, 0);
@@ -193,7 +193,10 @@ namespace DoAn_Demo.UI
                 textBoxIDXoaHS.Text = idHS;
 
             }
-            catch { }
+            catch {
+               
+            }
+            
         }
 
        
@@ -288,13 +291,25 @@ namespace DoAn_Demo.UI
                 ShowInfo("Thêm sinh viên thành công");
                 danhSachHocSinh = service.GetDanhSachLop(l => l.IDLopHoc == lop.IDLopHoc);
                 FillData(danhSachHocSinh);
-                
+                UpdateSiSo();
             }
             catch (Exception ex)
             {
                 ShowErr(ex.Message, "Exception");
             }
 
+        }
+
+        private void UpdateSiSo()
+        {
+            lop.SiSo = danhSachHocSinh.Count();
+            UpdateLopHoc(lop);
+        }
+
+        private void UpdateLopHoc(LopHoc lop)
+        {
+            service.UpdateLopHoc(lop) ;
+            service.Save();
         }
 
         /// <summary>
@@ -416,6 +431,7 @@ namespace DoAn_Demo.UI
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             string IDHSs = textBoxIDXoaHS.Text.Trim();
+            if (IDHSs.Length <= 0) return;
             int IDHSi = int.Parse(IDHSs);
             DanhSachLop danhSachLop;
 
@@ -435,6 +451,7 @@ namespace DoAn_Demo.UI
                     service.Save();
                     List<DanhSachLop> danhSaches = service.GetDanhSachLop(ds => ds.IDLopHoc == lop.IDLopHoc);
                     FillData(danhSaches);
+                    UpdateSiSo();
                 }
                 else
                     return;
@@ -479,11 +496,6 @@ namespace DoAn_Demo.UI
                 }
             }
 
-
-        }
-
-        private void dataGridViewHocSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 

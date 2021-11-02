@@ -34,10 +34,11 @@ namespace DoAn_Demo.UI
             // 
             // reportViewerThongKe
             // 
-            this.reportViewerThongKe.Location = new System.Drawing.Point(78, 64);
+            this.reportViewerThongKe.LocalReport.ReportEmbeddedResource = "DoAn_Demo.Reports.ReportXepLoaiHocSinh.rdlc";
+            this.reportViewerThongKe.Location = new System.Drawing.Point(15, 20);
             this.reportViewerThongKe.Name = "reportViewerThongKe";
             this.reportViewerThongKe.ServerReport.BearerToken = null;
-            this.reportViewerThongKe.Size = new System.Drawing.Size(1041, 533);
+            this.reportViewerThongKe.Size = new System.Drawing.Size(1489, 611);
             this.reportViewerThongKe.TabIndex = 0;
             // 
             // UserControlThongKe
@@ -47,6 +48,7 @@ namespace DoAn_Demo.UI
             this.Controls.Add(this.reportViewerThongKe);
             this.Name = "UserControlThongKe";
             this.Size = new System.Drawing.Size(1522, 649);
+            this.Load += new System.EventHandler(this.UserControlThongKe_Load);
             this.ResumeLayout(false);
 
         }
